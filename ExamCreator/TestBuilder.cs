@@ -46,6 +46,8 @@ namespace ExamCreator
 
         private void btn_AddQuestion_Click(object sender, EventArgs e)
         {
+            int Row = dg_Public.CurrentRow.Index;
+            lb_QuestionList.Items.Add(); //http://www.codeproject.com/Questions/338684/get-value-from-selected-rows-in-datagridview
             
         }
     }

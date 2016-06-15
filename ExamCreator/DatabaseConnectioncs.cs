@@ -82,7 +82,10 @@ namespace ExamCreator
         public void UpdateDatabase(System.Data.DataSet ds)
         {
             System.Data.SqlClient.SqlCommandBuilder cb = new System.Data.SqlClient.SqlCommandBuilder(da_1);
-            cb.DataAdapter.Update(ds.Tables[1]);
+            cb.QuotePrefix = "[";
+            cb.QuoteSuffix = "]";
+            cb.DataAdapter.Update(ds.Tables[0]);
+            
         }
 
 

@@ -34,11 +34,11 @@ namespace ExamCreator
         {
             try
             {
-                DatabaseConnectioncs DbConnection = new DatabaseConnectioncs();
-                DbConnection.connection_string = ExamCreator.Properties.Settings.Default.DBConn;
-                DbConnection.Sql = "SELECT * FROM QuestionTable";
+                objConnector = new DatabaseConnectioncs();
+                objConnector.connection_string = ExamCreator.Properties.Settings.Default.DBConn;
+                objConnector.Sql = "SELECT * FROM QuestionTable";
 
-                ds = DbConnection.GetConnection;
+                ds = objConnector.GetConnection;
                 MessageBox.Show("QuestionTable Connection reached");
             }
             catch (Exception err)
@@ -79,8 +79,8 @@ namespace ExamCreator
                 privacy = false;
             }
             
-            DataRow dr = ds.Tables[1].NewRow();
-            /*
+            DataRow dr = ds.Tables[0].NewRow();
+            
             dr[1] = tbar_Difficulty.Value; //difficulty
             dr[2] = txt_QuestionTitle.Text; //QTitle
             dr[3] = privacy; //privacy
@@ -88,17 +88,9 @@ namespace ExamCreator
             dr[5] = txt_Question.Text; //QText
             dr[6] = num_Mark.Value;//mark
             dr[7] = lb_Topics.SelectedItem;//topic
-            */
+            
 
-            dr[1] = 3;
-            dr[2] = "This is question";
-            dr[3] = false;
-            dr[4] = null;
-            dr[5] = "This is what student sees";
-            dr[6] = 4;
-            dr[7] = "DataBases";
-
-            ds.Tables[1].Rows.Add(dr);
+            ds.Tables[0].Rows.Add(dr);
 
             try
             {
@@ -107,12 +99,10 @@ namespace ExamCreator
                 inc = maxRows - 1;
 
                 MessageBox.Show("Your question has been added!");
-                            
             }
-
             catch (Exception err)
             {
-                MessageBox.Show(err.Message);
+                MessageBox.Show(err.Message + err.StackTrace);
             }
              
         }
