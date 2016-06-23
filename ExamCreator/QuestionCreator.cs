@@ -100,9 +100,9 @@ namespace ExamCreator
 
                 MessageBox.Show("Your question has been added!");
             }
-            catch (Exception err)
+            catch
             {
-                MessageBox.Show(err.Message + err.StackTrace);
+                MessageBox.Show("Please fill in all of the empty fields");
             }
              
         }

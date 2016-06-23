@@ -15,8 +15,11 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=(LocalDB)\v11.0;AttachDbFilename="C:\Users\Miniman\Documents\A-Level\C# Projects\ExamCreator\ExamCreator\ExamDB.mdf";Integrated Security=True</Value>
     </Setting>
-    <Setting Name="SelectStudents" Type="System.String" Scope="Application">
+    <Setting Name="SelectQuestions" Type="System.String" Scope="Application">
       <Value Profile="(Default)">SELECT * FROM QuestionTable</Value>
+    </Setting>
+    <Setting Name="SelectStudent" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SELECT * FROM tblStudent</Value>
     </Setting>
   </Settings>
 </SettingsFile>

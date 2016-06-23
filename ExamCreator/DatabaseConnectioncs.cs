@@ -48,7 +48,7 @@ namespace ExamCreator
             return dat_set;
         }
 
-        public BindingSource MyBindingSource()
+        public BindingSource MyBindingSource() //make more efficient
         {
             System.Data.SqlClient.SqlConnection con = new System.Data.SqlClient.SqlConnection(strCon);
 
@@ -70,6 +70,22 @@ namespace ExamCreator
             con.Open();
 
             da_1 = new System.Data.SqlClient.SqlDataAdapter("SELECT * from QuestionTable", con);
+
+            DataTable table = new DataTable();
+            da_1.Fill(table);
+
+            BindingSource bSource = new BindingSource();
+            bSource.DataSource = table;
+            return bSource;
+        }
+
+        public BindingSource StudentTableBindingSource()
+        {
+            System.Data.SqlClient.SqlConnection con = new System.Data.SqlClient.SqlConnection(strCon);
+
+            con.Open();
+
+            da_1 = new System.Data.SqlClient.SqlDataAdapter("SELECT * from tblStudent", con);
 
             DataTable table = new DataTable();
             da_1.Fill(table);

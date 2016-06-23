@@ -42,6 +42,7 @@
             this.btn_CreateQuestion = new System.Windows.Forms.Button();
             this.btn_DeleteQuestion = new System.Windows.Forms.Button();
             this.btn_Edit = new System.Windows.Forms.Button();
+            this.btn_Complete = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tp_Public.SuspendLayout();
@@ -183,11 +184,22 @@
             this.btn_Edit.Text = "Edit question";
             this.btn_Edit.UseVisualStyleBackColor = true;
             // 
+            // btn_Complete
+            // 
+            this.btn_Complete.Location = new System.Drawing.Point(508, 488);
+            this.btn_Complete.Name = "btn_Complete";
+            this.btn_Complete.Size = new System.Drawing.Size(144, 47);
+            this.btn_Complete.TabIndex = 18;
+            this.btn_Complete.Text = "Complete and send test";
+            this.btn_Complete.UseVisualStyleBackColor = true;
+            this.btn_Complete.Click += new System.EventHandler(this.btn_Complete_Click);
+            // 
             // TestBuilder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(664, 540);
+            this.Controls.Add(this.btn_Complete);
             this.Controls.Add(this.btn_Edit);
             this.Controls.Add(this.btn_DeleteQuestion);
             this.Controls.Add(this.btn_CreateQuestion);
@@ -224,6 +236,7 @@
         private System.Windows.Forms.DataGridView dg_Public;
         private System.Windows.Forms.Button btn_DeleteQuestion;
         private System.Windows.Forms.Button btn_Edit;
+        private System.Windows.Forms.Button btn_Complete;
 
     }
 }

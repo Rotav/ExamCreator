@@ -225,8 +225,9 @@
             this.lb_Topics.Items.AddRange(new object[] {
             "Databases",
             "Algorithims",
-            "etc",
-            "more"});
+            "Binary",
+            "Hardware",
+            "Software"});
             this.lb_Topics.Location = new System.Drawing.Point(7, 20);
             this.lb_Topics.Name = "lb_Topics";
             this.lb_Topics.Size = new System.Drawing.Size(254, 108);

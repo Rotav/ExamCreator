@@ -55,9 +55,18 @@ namespace ExamCreator.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("SELECT * FROM QuestionTable")]
-        public string SelectStudents {
+        public string SelectQuestions {
             get {
-                return ((string)(this["SelectStudents"]));
+                return ((string)(this["SelectQuestions"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("SELECT * FROM tblStudent")]
+        public string SelectStudent {
+            get {
+                return ((string)(this["SelectStudent"]));
             }
         }
     }

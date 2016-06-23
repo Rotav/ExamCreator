@@ -17,13 +17,6 @@ namespace ExamCreator
         DatabaseConnectioncs objConnector;
         string stringConnector;
 
-        DataSet ds;
-        DataRow dr;
-
-        int maxRows;
-        bool correct = false;
-        DataRow dataResult;
-
         public TestBuilder()
         {
             InitializeComponent();
@@ -46,9 +39,21 @@ namespace ExamCreator
 
         private void btn_AddQuestion_Click(object sender, EventArgs e)
         {
-            int Row = dg_Public.CurrentRow.Index;
-            lb_QuestionList.Items.Add(); //http://www.codeproject.com/Questions/338684/get-value-from-selected-rows-in-datagridview
-            
+            string cellValue = dg_Public["QuestionTitle", dg_Public.CurrentRow.Index].Value.ToString();
+            lb_QuestionList.Items.Add(cellValue);            
+        }
+
+        private void btn_Complete_Click(object sender, EventArgs e)
+        {
+            if (lb_QuestionList.Items == null) //fix
+            {
+                MessageBox.Show("You must have at least one question in the test to complete it.");
+            }
+            else
+            {
+                SendTest sendtest = new SendTest();
+                sendtest.Show();
+            }
         }
     }
 }

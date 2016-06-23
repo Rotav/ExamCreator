@@ -52,7 +52,7 @@ namespace ExamCreator
             stringConnector = Settings.Default.DBConn;
 
             objConnector.connection_string = stringConnector;
-            objConnector.Sql = Settings.Default.SelectStudents;
+            objConnector.Sql = Settings.Default.SelectQuestions;
             dataGridView1.DataSource = objConnector.MyBindingSource(); 
         }
     }
