@@ -21,45 +21,81 @@ namespace ExamCreator
         DataRow dr;
 
         int maxRows;
-        bool correct = false;
         DataRow dataResult;
+
+        DatabaseConnectioncs objConnector2;
+        string stringConnector2;
+
+        DataSet ds2;
+        DataRow dr2;
+
+        int maxRows2;
+        DataRow dataResult2;
+
+        bool correct = false;
 
         public Form1()
         {
             InitializeComponent();
         }
 
+        private void CheckTable(string button)
+        {
+            correct = false;
+            if (button == "teacher")
+            {
+                for (int i = 0; i < maxRows; i++)
+                {
+                    dr = ds.Tables[0].Rows[i];
+                    if (txt_Username.Text == dr.ItemArray.GetValue(1).ToString() && txt_Password.Text == dr.ItemArray.GetValue(2).ToString())
+                    {
+                        dataResult = dr;
+                        correct = true;
+                        break;
+                    }
+                }
+                if (correct)
+                {
+                    MainMenuTeacher mainmenu = new MainMenuTeacher();
+                    mainmenu.Show();
+                }
+                else
+                {
+                    MessageBox.Show("The username or password is incorrect or does not exist.");
+                }
+            }
+            if (button == "student")
+            {
+                for (int i = 0; i < maxRows2; i++)
+                {
+                    dr2 = ds2.Tables[0].Rows[i];
+                    if (txt_Username.Text == dr2.ItemArray.GetValue(1).ToString() && txt_Password.Text == dr2.ItemArray.GetValue(2).ToString())
+                    {
+                        dataResult2 = dr2;
+                        correct = true;
+                        break;
+                    }
+                }
+                if (correct)
+                {
+                    MainMenuStudent mainmenu = new MainMenuStudent();
+                    mainmenu.Show();
+                }
+                else
+                {
+                    MessageBox.Show("The username or password is incorrect or does not exist.");
+                }
+            }
+        }
+
         private void btn_Lbtn_Loginogin_Click(object sender, EventArgs e)
         {
+            CheckTable("student");
         }
 
         private void btn_LoginTeacher_Click(object sender, EventArgs e)
         {
-            correct = false;
-            for (int i = 0; i < maxRows; i++)
-            {
-                dr = ds.Tables[0].Rows[i];
-                if (txt_Username.Text == dr.ItemArray.GetValue(1).ToString() && txt_Password.Text == dr.ItemArray.GetValue(2).ToString())
-                {
-                    dataResult = dr;
-                    correct = true;
-                    break;
-                }
-            }
-
-            if (correct)
-            {
-                MainMenuTeacher mainmenu = new MainMenuTeacher();
-                mainmenu.Show();
-            }
-            else if (txt_Username.Text == "" || txt_Password.Text == "")
-            {
-                MessageBox.Show("You must enter text into each field.");
-            }
-            else
-            {
-                MessageBox.Show("The username or password is incorrect or does not exist.");
-            }
+            CheckTable("teacher");
         }
 
 
@@ -74,8 +110,24 @@ namespace ExamCreator
                 objConnector.connection_string = stringConnector;
                 objConnector.Sql = Settings.Default.SelectTeachers;
 
-                ds = objConnector.GetConnection; 
+                ds = objConnector.GetConnection;
                 maxRows = ds.Tables[0].Rows.Count;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
+
+            try
+            {
+                objConnector2 = new DatabaseConnectioncs();
+                stringConnector2 = Settings.Default.DBConn;
+
+                objConnector2.connection_string = stringConnector2;
+                objConnector2.Sql = Settings.Default.SelectStudent;
+
+                ds2 = objConnector2.GetConnection;
+                maxRows2 = ds2.Tables[0].Rows.Count;
             }
             catch (Exception error)
             {

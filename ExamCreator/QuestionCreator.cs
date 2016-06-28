@@ -94,7 +94,7 @@ namespace ExamCreator
 
             try
             {
-                objConnector.UpdateDatabase(ds); //problem if ds.Tables[0]
+                objConnector.UpdateDatabase(ds);
                 maxRows++;
                 inc = maxRows - 1;
 

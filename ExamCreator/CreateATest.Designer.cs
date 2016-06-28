@@ -40,6 +40,9 @@
             this.tp_Private = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.examDataSet1 = new ExamCreator.ExamDataSet();
+            this.rb_Public = new System.Windows.Forms.RadioButton();
+            this.rb_Private = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -79,6 +82,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.rb_Private);
+            this.groupBox1.Controls.Add(this.rb_Public);
             this.groupBox1.Controls.Add(this.txt_Title);
             this.groupBox1.Controls.Add(this.btn_CreateTest);
             this.groupBox1.Controls.Add(this.label1);
@@ -164,6 +170,38 @@
             this.examDataSet1.Locale = new System.Globalization.CultureInfo("en-GB");
             this.examDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // rb_Public
+            // 
+            this.rb_Public.AutoSize = true;
+            this.rb_Public.Checked = true;
+            this.rb_Public.Location = new System.Drawing.Point(133, 93);
+            this.rb_Public.Name = "rb_Public";
+            this.rb_Public.Size = new System.Drawing.Size(54, 17);
+            this.rb_Public.TabIndex = 3;
+            this.rb_Public.TabStop = true;
+            this.rb_Public.Text = "Public";
+            this.rb_Public.UseVisualStyleBackColor = true;
+            // 
+            // rb_Private
+            // 
+            this.rb_Private.AutoSize = true;
+            this.rb_Private.Location = new System.Drawing.Point(193, 93);
+            this.rb_Private.Name = "rb_Private";
+            this.rb_Private.Size = new System.Drawing.Size(58, 17);
+            this.rb_Private.TabIndex = 4;
+            this.rb_Private.Text = "Private";
+            this.rb_Private.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(62, 95);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Test privacy";
+            // 
             // CreateATest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -201,5 +239,8 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private ExamDataSet examDataSet1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RadioButton rb_Private;
+        private System.Windows.Forms.RadioButton rb_Public;
     }
 }

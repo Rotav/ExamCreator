@@ -35,12 +35,29 @@ namespace ExamCreator
             string ForenameValue = dg_Students["Forename", dg_Students.CurrentRow.Index].Value.ToString();
             string SurnameValue = dg_Students["Surname", dg_Students.CurrentRow.Index].Value.ToString();
             string UserValue = dg_Students["Username", dg_Students.CurrentRow.Index].Value.ToString();
-            lb_SendUsers.Items.Add(UserValue + " (" + ForenameValue + " " + SurnameValue + ")");
+
+            string sendUserText = UserValue + " (" + ForenameValue + " " + SurnameValue + ")";
+            
+            if (lb_SendUsers.Items.Contains(sendUserText))
+            {
+                MessageBox.Show("This user has already been addded to the list.");
+            }
+            else
+            {
+                lb_SendUsers.Items.Add(sendUserText);
+            }
+   
         }
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
             lb_SendUsers.Items.Remove(lb_SendUsers.SelectedItem);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            MessageBox.Show("Test has been successfully sent to users.");
         }
     }
 }

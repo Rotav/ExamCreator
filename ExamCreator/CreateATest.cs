@@ -35,6 +35,30 @@ namespace ExamCreator
             }
             else
             {
+                bool privacy = true;
+                int inc = 0;
+
+                if (rb_Public.Checked == true)
+                {
+                    privacy = true;
+                }
+                else
+                {
+                    privacy = false;
+                }
+
+                ds.Tables[0].Rows.Add(dr);
+
+                dr[1] = txt_Title.Text; //Question Title
+                dr[2] = privacy;//privacy
+
+                ds.Tables[0].Rows.Add(dr);
+
+                objConnector.UpdateDatabase(ds);
+                maxRows++;
+                inc = maxRows - 1;
+
+                MessageBox.Show("Your test has been successfully created.");
                 TestBuilder testbuilder = new TestBuilder();
                 testbuilder.Show();
             }
@@ -57,3 +81,45 @@ namespace ExamCreator
         }
     }
 }
+
+
+
+
+
+
+/*bool privacy = true;
+            if (rb_Public.Checked == true)
+            {
+                privacy = true;
+            }
+            else
+            {
+                privacy = false;
+            }
+            
+            DataRow dr = ds.Tables[0].NewRow();
+            
+            dr[1] = tbar_Difficulty.Value; //difficulty
+            dr[2] = txt_QuestionTitle.Text; //QTitle
+            dr[3] = privacy; //privacy
+            dr[4] = byteBLOBData;//image
+            dr[5] = txt_Question.Text; //QText
+            dr[6] = num_Mark.Value;//mark
+            dr[7] = lb_Topics.SelectedItem;//topic
+            
+
+            ds.Tables[0].Rows.Add(dr);
+
+            try
+            {
+                objConnector.UpdateDatabase(ds);
+                maxRows++;
+                inc = maxRows - 1;
+
+                MessageBox.Show("Your question has been added!");
+            }
+            catch
+            {
+                MessageBox.Show("Please fill in all of the empty fields");
+            }
+*/

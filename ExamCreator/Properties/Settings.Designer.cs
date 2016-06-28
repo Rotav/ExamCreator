@@ -43,17 +43,6 @@ namespace ExamCreator.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\v11.0;AttachDbFilename=\"C:\\Users\\Miniman\\Documents\\A-Level\\" +
-            "C# Projects\\ExamCreator\\ExamCreator\\ExamDB.mdf\";Integrated Security=True")]
-        public string DBConn {
-            get {
-                return ((string)(this["DBConn"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("SELECT * FROM QuestionTable")]
         public string SelectQuestions {
             get {
@@ -67,6 +56,17 @@ namespace ExamCreator.Properties {
         public string SelectStudent {
             get {
                 return ((string)(this["SelectStudent"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\v11.0;AttachDbFilename=|DataDirectory|\\ExamDB.mdf;Integrate" +
+            "d Security=True")]
+        public string DBConn {
+            get {
+                return ((string)(this["DBConn"]));
             }
         }
     }
