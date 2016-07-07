@@ -40,7 +40,15 @@ namespace ExamCreator
         private void btn_AddQuestion_Click(object sender, EventArgs e)
         {
             string cellValue = dg_Public["QuestionTitle", dg_Public.CurrentRow.Index].Value.ToString();
-            lb_QuestionList.Items.Add(cellValue);            
+            if (lb_QuestionList.Items.Contains(cellValue))
+            {
+                MessageBox.Show("This question has already been addded to the list.");
+            }
+            else
+            {
+                lb_QuestionList.Items.Add(cellValue);  
+            }
+                      
         }
 
         private void btn_Complete_Click(object sender, EventArgs e)
@@ -51,9 +59,25 @@ namespace ExamCreator
             }
             else
             {
+
                 SendTest sendtest = new SendTest();
                 sendtest.Show();
             }
+        }
+
+        private void lb_QuestionList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            /*for (int i = 0; i < length; i++)
+            {
+                if (lb_QuestionList.GetItemText(lb_QuestionList.SelectedItem) == dg_Public.["QuestionContent", i])
+                {
+
+                }
+			}*/
+
+            string content = lb_QuestionList.GetItemText(lb_QuestionList.SelectedItem);
+            lab_QuestionContent.Text = lb_QuestionList.GetItemText(lb_QuestionList.SelectedItem);
+            lab_Mark.Text = lb_QuestionList.GetItemText(lb_QuestionList.SelectedItem);
         }
     }
 }

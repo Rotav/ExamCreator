@@ -21,7 +21,6 @@ namespace ExamCreator
         DataRow dr;
 
         int maxRows;
-        int inc = 0;
         bool correct = false;
         DataRow dataResult;
         
@@ -47,7 +46,7 @@ namespace ExamCreator
             }
         }
 
-        private void btn_UploadImage_Click(object sender, EventArgs e)
+ /*       private void btn_UploadImage_Click(object sender, EventArgs e)
         {
              DialogResult result = openFileDialog1.ShowDialog();
              if (result == DialogResult.OK)
@@ -63,13 +62,15 @@ namespace ExamCreator
 
                  pb_QuestionImage.Image = Image.FromStream(stmBLOBData);
              }
-        }
+        }*/
 
         public byte[] byteBLOBData { get; set; }
 
         private void btn_SubmitQuestion_Click(object sender, EventArgs e)
         {
             bool privacy = true;
+            int inc = 0;
+
             if (rb_Public.Checked == true)
             {
                 privacy = true;
@@ -105,6 +106,31 @@ namespace ExamCreator
                 MessageBox.Show("Please fill in all of the empty fields");
             }
              
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -15,6 +15,7 @@ namespace ExamCreator
     {
         DatabaseConnectioncs objConnector;
         string stringConnector;
+        DataSet ds;
 
         public SendTest()
         {

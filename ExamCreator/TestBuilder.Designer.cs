@@ -30,8 +30,8 @@
         {
             this.lb_QuestionList = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lb_QuestionContent = new System.Windows.Forms.Label();
+            this.lab_Mark = new System.Windows.Forms.Label();
+            this.lab_QuestionContent = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tp_Public = new System.Windows.Forms.TabPage();
@@ -51,17 +51,21 @@
             // 
             // lb_QuestionList
             // 
+            this.lb_QuestionList.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_QuestionList.FormattingEnabled = true;
+            this.lb_QuestionList.ItemHeight = 14;
             this.lb_QuestionList.Location = new System.Drawing.Point(447, 12);
             this.lb_QuestionList.Name = "lb_QuestionList";
-            this.lb_QuestionList.Size = new System.Drawing.Size(198, 342);
+            this.lb_QuestionList.Size = new System.Drawing.Size(198, 340);
             this.lb_QuestionList.TabIndex = 10;
+            this.lb_QuestionList.SelectedIndexChanged += new System.EventHandler(this.lb_QuestionList_SelectedIndexChanged);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.lb_QuestionContent);
+            this.groupBox1.Controls.Add(this.lab_Mark);
+            this.groupBox1.Controls.Add(this.lab_QuestionContent);
             this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(13, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(428, 342);
@@ -69,31 +73,32 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Question preview";
             // 
-            // label1
+            // lab_Mark
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 302);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Marks: ";
+            this.lab_Mark.AutoSize = true;
+            this.lab_Mark.Font = new System.Drawing.Font("Arial", 11.25F);
+            this.lab_Mark.Location = new System.Drawing.Point(6, 302);
+            this.lab_Mark.Name = "lab_Mark";
+            this.lab_Mark.Size = new System.Drawing.Size(55, 17);
+            this.lab_Mark.TabIndex = 2;
+            this.lab_Mark.Text = "Marks: ";
             // 
-            // lb_QuestionContent
+            // lab_QuestionContent
             // 
-            this.lb_QuestionContent.AutoSize = true;
-            this.lb_QuestionContent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_QuestionContent.Location = new System.Drawing.Point(62, 27);
-            this.lb_QuestionContent.Name = "lb_QuestionContent";
-            this.lb_QuestionContent.Size = new System.Drawing.Size(304, 20);
-            this.lb_QuestionContent.TabIndex = 1;
-            this.lb_QuestionContent.Text = "How can mirrors be real if our eyes aren\'t?";
+            this.lab_QuestionContent.AutoSize = true;
+            this.lab_QuestionContent.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lab_QuestionContent.Location = new System.Drawing.Point(43, 34);
+            this.lab_QuestionContent.Name = "lab_QuestionContent";
+            this.lab_QuestionContent.Size = new System.Drawing.Size(0, 22);
+            this.lab_QuestionContent.TabIndex = 1;
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox1.Location = new System.Drawing.Point(7, 143);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(415, 156);
             this.textBox1.TabIndex = 0;
             // 
@@ -139,65 +144,90 @@
             // 
             // btn_DeleteQuestionTest
             // 
+            this.btn_DeleteQuestionTest.BackColor = System.Drawing.Color.White;
+            this.btn_DeleteQuestionTest.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn_DeleteQuestionTest.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_DeleteQuestionTest.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_DeleteQuestionTest.Location = new System.Drawing.Point(447, 360);
             this.btn_DeleteQuestionTest.Name = "btn_DeleteQuestionTest";
             this.btn_DeleteQuestionTest.Size = new System.Drawing.Size(198, 23);
             this.btn_DeleteQuestionTest.TabIndex = 13;
             this.btn_DeleteQuestionTest.Text = "Delete Question from test";
-            this.btn_DeleteQuestionTest.UseVisualStyleBackColor = true;
+            this.btn_DeleteQuestionTest.UseVisualStyleBackColor = false;
             this.btn_DeleteQuestionTest.Click += new System.EventHandler(this.btn_DeleteQuestion_Click);
             // 
             // btn_AddQuestion
             // 
-            this.btn_AddQuestion.Location = new System.Drawing.Point(12, 512);
+            this.btn_AddQuestion.BackColor = System.Drawing.Color.White;
+            this.btn_AddQuestion.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn_AddQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_AddQuestion.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AddQuestion.Location = new System.Drawing.Point(7, 512);
             this.btn_AddQuestion.Name = "btn_AddQuestion";
-            this.btn_AddQuestion.Size = new System.Drawing.Size(111, 23);
+            this.btn_AddQuestion.Size = new System.Drawing.Size(116, 23);
             this.btn_AddQuestion.TabIndex = 14;
             this.btn_AddQuestion.Text = "Add Question to test";
-            this.btn_AddQuestion.UseVisualStyleBackColor = true;
+            this.btn_AddQuestion.UseVisualStyleBackColor = false;
             this.btn_AddQuestion.Click += new System.EventHandler(this.btn_AddQuestion_Click);
             // 
             // btn_CreateQuestion
             // 
+            this.btn_CreateQuestion.BackColor = System.Drawing.Color.White;
+            this.btn_CreateQuestion.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn_CreateQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_CreateQuestion.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CreateQuestion.Location = new System.Drawing.Point(329, 512);
             this.btn_CreateQuestion.Name = "btn_CreateQuestion";
             this.btn_CreateQuestion.Size = new System.Drawing.Size(113, 23);
             this.btn_CreateQuestion.TabIndex = 15;
             this.btn_CreateQuestion.Text = "Create new question";
-            this.btn_CreateQuestion.UseVisualStyleBackColor = true;
+            this.btn_CreateQuestion.UseVisualStyleBackColor = false;
             // 
             // btn_DeleteQuestion
             // 
+            this.btn_DeleteQuestion.BackColor = System.Drawing.Color.White;
+            this.btn_DeleteQuestion.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn_DeleteQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_DeleteQuestion.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_DeleteQuestion.Location = new System.Drawing.Point(229, 512);
             this.btn_DeleteQuestion.Name = "btn_DeleteQuestion";
             this.btn_DeleteQuestion.Size = new System.Drawing.Size(94, 23);
             this.btn_DeleteQuestion.TabIndex = 16;
             this.btn_DeleteQuestion.Text = "Delete question";
-            this.btn_DeleteQuestion.UseVisualStyleBackColor = true;
+            this.btn_DeleteQuestion.UseVisualStyleBackColor = false;
             // 
             // btn_Edit
             // 
+            this.btn_Edit.BackColor = System.Drawing.Color.White;
+            this.btn_Edit.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn_Edit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Edit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Edit.Location = new System.Drawing.Point(129, 512);
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(94, 23);
             this.btn_Edit.TabIndex = 17;
             this.btn_Edit.Text = "Edit question";
-            this.btn_Edit.UseVisualStyleBackColor = true;
+            this.btn_Edit.UseVisualStyleBackColor = false;
             // 
             // btn_Complete
             // 
+            this.btn_Complete.BackColor = System.Drawing.Color.White;
+            this.btn_Complete.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn_Complete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Complete.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Complete.Location = new System.Drawing.Point(508, 488);
             this.btn_Complete.Name = "btn_Complete";
             this.btn_Complete.Size = new System.Drawing.Size(144, 47);
             this.btn_Complete.TabIndex = 18;
             this.btn_Complete.Text = "Complete and send test";
-            this.btn_Complete.UseVisualStyleBackColor = true;
+            this.btn_Complete.UseVisualStyleBackColor = false;
             this.btn_Complete.Click += new System.EventHandler(this.btn_Complete_Click);
             // 
             // TestBuilder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(664, 540);
             this.Controls.Add(this.btn_Complete);
             this.Controls.Add(this.btn_Edit);
@@ -230,8 +260,8 @@
         private System.Windows.Forms.Button btn_DeleteQuestionTest;
         private System.Windows.Forms.Button btn_AddQuestion;
         private System.Windows.Forms.Button btn_CreateQuestion;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lb_QuestionContent;
+        private System.Windows.Forms.Label lab_Mark;
+        private System.Windows.Forms.Label lab_QuestionContent;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dg_Public;
         private System.Windows.Forms.Button btn_DeleteQuestion;

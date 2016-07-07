@@ -17,7 +17,6 @@ namespace ExamCreator
         string stringConnector;
 
         DataSet ds;
-        DataRow dr;
 
         int maxRows;
         bool correct = false;
@@ -47,20 +46,30 @@ namespace ExamCreator
                     privacy = false;
                 }
 
+                DataRow dr = ds.Tables[0].NewRow();
+                
+                dr[1] = privacy;//privacy
+                dr[2] = txt_Title.Text; //Question Title
+                
                 ds.Tables[0].Rows.Add(dr);
 
-                dr[1] = txt_Title.Text; //Question Title
-                dr[2] = privacy;//privacy
+                try
+                {
+                    objConnector.UpdateDatabase(ds);
+                    maxRows++;
+                    inc = maxRows - 1;
 
-                ds.Tables[0].Rows.Add(dr);
+                    MessageBox.Show("Your test has been successfully created.");
+                    TestBuilder testbuilder = new TestBuilder();
+                    testbuilder.Show();
+                }
+                catch(Exception err)
+                {
+                    MessageBox.Show(err.ToString());
+                }
 
-                objConnector.UpdateDatabase(ds);
-                maxRows++;
-                inc = maxRows - 1;
+                
 
-                MessageBox.Show("Your test has been successfully created.");
-                TestBuilder testbuilder = new TestBuilder();
-                testbuilder.Show();
             }
 
         }
@@ -77,7 +86,21 @@ namespace ExamCreator
 
             objConnector.connection_string = stringConnector;
             objConnector.Sql = Settings.Default.SelectQuestions;
-            dataGridView1.DataSource = objConnector.MyBindingSource(); 
+            dataGridView1.DataSource = objConnector.MyBindingSource();
+            
+            try
+            {
+                objConnector = new DatabaseConnectioncs();
+                objConnector.connection_string = ExamCreator.Properties.Settings.Default.DBConn;
+                objConnector.Sql = "SELECT * FROM tblTest";
+
+                ds = objConnector.GetConnection;
+                MessageBox.Show("tblTest Connection reached");
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
     }
 }

@@ -69,12 +69,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CreateAccount.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CreateAccount.Designer.cs">
-      <DependentUpon>CreateAccount.cs</DependentUpon>
-    </Compile>
     <Compile Include="CreateATest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +87,10 @@
     <Compile Include="DbModelBuilder_2.cs" />
     <Compile Include="DbSet.cs" />
     <Compile Include="DbSet_2.cs" />
+    <Compile Include="ExamDataSet.cs">
+      <DependentUpon>ExamDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ExamDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -152,17 +150,8 @@
     <Compile Include="TestBuilder.Designer.cs">
       <DependentUpon>TestBuilder.cs</DependentUpon>
     </Compile>
-    <Compile Include="TestForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TestForm.Designer.cs">
-      <DependentUpon>TestForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="UnintentionalCodeFirstException.cs" />
     <Compile Include="UnintentionalCodeFirstException_2.cs" />
-    <EmbeddedResource Include="CreateAccount.resx">
-      <DependentUpon>CreateAccount.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CreateATest.resx">
       <DependentUpon>CreateATest.cs</DependentUpon>
     </EmbeddedResource>

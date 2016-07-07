@@ -38,14 +38,17 @@
             // 
             // lb_SendUsers
             // 
+            this.lb_SendUsers.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_SendUsers.FormattingEnabled = true;
+            this.lb_SendUsers.ItemHeight = 14;
             this.lb_SendUsers.Location = new System.Drawing.Point(13, 13);
             this.lb_SendUsers.Name = "lb_SendUsers";
-            this.lb_SendUsers.Size = new System.Drawing.Size(141, 173);
+            this.lb_SendUsers.Size = new System.Drawing.Size(141, 172);
             this.lb_SendUsers.TabIndex = 0;
             // 
             // dg_Students
             // 
+            this.dg_Students.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dg_Students.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_Students.Location = new System.Drawing.Point(160, 13);
             this.dg_Students.Name = "dg_Students";
@@ -55,38 +58,51 @@
             // 
             // btn_Delete
             // 
+            this.btn_Delete.BackColor = System.Drawing.Color.White;
+            this.btn_Delete.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Delete.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Delete.Location = new System.Drawing.Point(13, 193);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(141, 23);
             this.btn_Delete.TabIndex = 2;
             this.btn_Delete.Text = "Delete User";
-            this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.UseVisualStyleBackColor = false;
             this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_AddToList
             // 
+            this.btn_AddToList.BackColor = System.Drawing.Color.White;
+            this.btn_AddToList.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn_AddToList.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_AddToList.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AddToList.Location = new System.Drawing.Point(471, 193);
             this.btn_AddToList.Name = "btn_AddToList";
             this.btn_AddToList.Size = new System.Drawing.Size(113, 23);
             this.btn_AddToList.TabIndex = 3;
             this.btn_AddToList.Text = "Add to send list";
-            this.btn_AddToList.UseVisualStyleBackColor = true;
+            this.btn_AddToList.UseVisualStyleBackColor = false;
             this.btn_AddToList.Click += new System.EventHandler(this.btn_AddToList_Click);
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(409, 226);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(175, 23);
             this.button1.TabIndex = 4;
             this.button1.Text = "Complete and send to users";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // SendTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(596, 261);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_AddToList);
