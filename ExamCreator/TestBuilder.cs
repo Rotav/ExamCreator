@@ -46,7 +46,7 @@ namespace ExamCreator
 
             objConnector2.connection_string = stringConnector;
 
-            objConnector2.Sql = "SELECT * FROM tblIDHolder";
+            objConnector2.Sql = "SELECT * FROM tblTestQuestion";
 
             ds = objConnector2.GetConnection;
         }
@@ -112,7 +112,7 @@ namespace ExamCreator
                         MessageBox.Show(err.ToString());
                     }
                 }
-                SendTest sendtest = new SendTest();
+                SendTest sendtest = new SendTest(1);
                 sendtest.Show();
             }
         }

@@ -16,9 +16,12 @@ namespace ExamCreator
         DatabaseConnectioncs objConnector;
         string stringConnector;
         DataSet ds;
+        DatabaseConnectioncs objConnector2;
+        public int TestID;
 
-        public SendTest()
+        public SendTest(int testID)
         {
+            TestID = testID;
             InitializeComponent();
         }
 
@@ -27,25 +30,36 @@ namespace ExamCreator
             objConnector = new DatabaseConnectioncs();
             stringConnector = Settings.Default.DBConn;
             objConnector.connection_string = stringConnector;
-            objConnector.Sql = Settings.Default.SelectTeachers;
-            dg_Students.DataSource = objConnector.StudentTableBindingSource(); 
+            objConnector.Sql = Settings.Default.SelectStudent;
+            dg_Students.DataSource = objConnector.StudentTableBindingSource();
+
+            objConnector = new DatabaseConnectioncs();
+            stringConnector = Settings.Default.DBConn;
+
+            objConnector2 = new DatabaseConnectioncs();
+
+            objConnector2.connection_string = stringConnector;
+
+            objConnector2.Sql = "SELECT * FROM tblStudentTests";
+
+            ds = objConnector2.GetConnection;
         }
 
         private void btn_AddToList_Click(object sender, EventArgs e)
         {
-            string ForenameValue = dg_Students["Forename", dg_Students.CurrentRow.Index].Value.ToString();
-            string SurnameValue = dg_Students["Surname", dg_Students.CurrentRow.Index].Value.ToString();
+            //string ForenameValue = dg_Students["Forename", dg_Students.CurrentRow.Index].Value.ToString();
+            //string surnameValue = dg_Students["Surname", dg_Students.CurrentRow.Index].Value.ToString();
             string UserValue = dg_Students["Username", dg_Students.CurrentRow.Index].Value.ToString();
 
-            string sendUserText = UserValue + " (" + ForenameValue + " " + SurnameValue + ")";
+            //string sendUserText = UserValue + " (" + ForenameValue + " " + SurnameValue + ")";
             
-            if (lb_SendUsers.Items.Contains(sendUserText))
+            if (lb_SendUsers.Items.Contains(UserValue))
             {
                 MessageBox.Show("This user has already been addded to the list.");
             }
             else
             {
-                lb_SendUsers.Items.Add(sendUserText);
+                lb_SendUsers.Items.Add(UserValue);
             }
    
         }
@@ -57,8 +71,46 @@ namespace ExamCreator
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (lb_SendUsers.Items == null) //fix
+            {
+                MessageBox.Show("You must have at least one question in the test to complete it.");
+            }
+            else
+            {
+                foreach (string item in lb_SendUsers.Items)
+                {
+                    DataRow dr = ds.Tables[0].NewRow();
 
-            MessageBox.Show("Test has been successfully sent to users.");
+                    int rowIndex = -1;
+                    foreach (DataGridViewRow row in dg_Students.Rows)
+                    {
+                        if (row.Cells[1].Value.ToString().Equals(item))
+                        {
+                            rowIndex = row.Index;
+                            break;
+                        }
+                    }
+
+                    string i2 = dg_Students["Id", rowIndex].Value.ToString();
+                    int i3;
+                    Int32.TryParse(i2, out i3);
+
+                    dr[1] = TestID;//Test ID
+                    dr[2] = i3; //Student ID
+
+                    ds.Tables[0].Rows.Add(dr);
+
+                    try
+                    {
+                        objConnector2.UpdateDatabase(ds);
+                    }
+                    catch (Exception err)
+                    {
+                        MessageBox.Show(err.ToString());
+                    }
+                }
+                MessageBox.Show("Test successfully sent!");
+            }
         }
     }
 }

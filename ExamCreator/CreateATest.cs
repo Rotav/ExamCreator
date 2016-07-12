@@ -44,10 +44,27 @@ namespace ExamCreator
                     privacy = false;
                 }
 
+                int level;
+
+                if (rb_GCSE.Checked == true)
+                {
+                    level = 1;
+                }
+                else if (rb_AS.Checked == true)
+                {
+                    level = 2;
+                }
+                else
+                {
+                    level = 3;
+                }
+
                 DataRow dr = ds.Tables[0].NewRow();
                 
                 dr[1] = privacy;//privacy
                 dr[2] = txt_Title.Text; //Question Title
+                dr[3] = level; //Question level
+                dr[4] = txt_Description.Text; //Question description 
                 
                 ds.Tables[0].Rows.Add(dr);
 
@@ -55,9 +72,8 @@ namespace ExamCreator
                 {
                     objConnector.UpdateDatabase(ds);            
                     int rows = ds.Tables[0].Rows.Count;
-                    MessageBox.Show(rows.ToString());
-                    MessageBox.Show("Your test has been successfully created: " + ds.Tables[0].Rows[rows-1][0].ToString());
-                    TestBuilder testbuilder = new TestBuilder(1);
+                    MessageBox.Show("Your test has been successfully created!");
+                    TestBuilder testbuilder = new TestBuilder(rows);
                     testbuilder.Show();
                 }
                 catch(Exception err)
@@ -88,12 +104,26 @@ namespace ExamCreator
                 objConnector.Sql = "SELECT * FROM tblTest";
 
                 ds = objConnector.GetConnection;
-                MessageBox.Show("tblTest Connection reached");
             }
             catch (Exception err)
             {
                 MessageBox.Show(err.Message);
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rb_Public_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rb_Private_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

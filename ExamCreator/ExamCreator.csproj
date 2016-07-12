@@ -144,6 +144,12 @@
     <Compile Include="StudentTable.cs" />
     <Compile Include="TeacherTable.cs" />
     <Compile Include="TeacherTable_2.cs" />
+    <Compile Include="Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
     <Compile Include="TestBuilder.cs">
       <SubType>Form</SubType>
     </Compile>

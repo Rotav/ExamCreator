@@ -126,7 +126,7 @@ SELECT TestId, Privacy, TestTitle FROM tblTest WHERE (TestId = @TestId)</Command
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblIDHolderTableAdapter" GeneratorDataComponentClassName="tblIDHolderTableAdapter" Name="tblIDHolder" UserDataComponentName="tblIDHolderTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblTestQuestionTableAdapter" GeneratorDataComponentClassName="tblTestQuestionTableAdapter" Name="tblTestQuestion" UserDataComponentName="tblTestQuestionTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="ExamDBConnectionString (Settings)" DbObjectName="dbo.tblIDHolder" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
@@ -191,7 +191,7 @@ SELECT Id, TestID, QuestionID FROM tblIDHolder WHERE (Id = @Id)</CommandText>
   <xs:element name="ExamDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ExamDataSet" msprop:Generator_UserDSName="ExamDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="QuestionTable" msprop:Generator_TableClassName="QuestionTableDataTable" msprop:Generator_TableVarName="tableQuestionTable" msprop:Generator_RowChangedName="QuestionTableRowChanged" msprop:Generator_TablePropName="QuestionTable" msprop:Generator_RowDeletingName="QuestionTableRowDeleting" msprop:Generator_RowChangingName="QuestionTableRowChanging" msprop:Generator_RowEvHandlerName="QuestionTableRowChangeEventHandler" msprop:Generator_RowDeletedName="QuestionTableRowDeleted" msprop:Generator_RowClassName="QuestionTableRow" msprop:Generator_UserTableName="QuestionTable" msprop:Generator_RowEvArgName="QuestionTableRowChangeEvent">
+        <xs:element name="QuestionTable" msprop:Generator_TableClassName="QuestionTableDataTable" msprop:Generator_TableVarName="tableQuestionTable" msprop:Generator_TablePropName="QuestionTable" msprop:Generator_RowDeletingName="QuestionTableRowDeleting" msprop:Generator_RowChangingName="QuestionTableRowChanging" msprop:Generator_RowEvHandlerName="QuestionTableRowChangeEventHandler" msprop:Generator_RowDeletedName="QuestionTableRowDeleted" msprop:Generator_UserTableName="QuestionTable" msprop:Generator_RowChangedName="QuestionTableRowChanged" msprop:Generator_RowEvArgName="QuestionTableRowChangeEvent" msprop:Generator_RowClassName="QuestionTableRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -223,7 +223,7 @@ SELECT Id, TestID, QuestionID FROM tblIDHolder WHERE (Id = @Id)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tblTest" msprop:Generator_TableClassName="tblTestDataTable" msprop:Generator_TableVarName="tabletblTest" msprop:Generator_RowChangedName="tblTestRowChanged" msprop:Generator_TablePropName="tblTest" msprop:Generator_RowDeletingName="tblTestRowDeleting" msprop:Generator_RowChangingName="tblTestRowChanging" msprop:Generator_RowEvHandlerName="tblTestRowChangeEventHandler" msprop:Generator_RowDeletedName="tblTestRowDeleted" msprop:Generator_RowClassName="tblTestRow" msprop:Generator_UserTableName="tblTest" msprop:Generator_RowEvArgName="tblTestRowChangeEvent">
+        <xs:element name="tblTest" msprop:Generator_TableClassName="tblTestDataTable" msprop:Generator_TableVarName="tabletblTest" msprop:Generator_TablePropName="tblTest" msprop:Generator_RowDeletingName="tblTestRowDeleting" msprop:Generator_RowChangingName="tblTestRowChanging" msprop:Generator_RowEvHandlerName="tblTestRowChangeEventHandler" msprop:Generator_RowDeletedName="tblTestRowDeleted" msprop:Generator_UserTableName="tblTest" msprop:Generator_RowChangedName="tblTestRowChanged" msprop:Generator_RowEvArgName="tblTestRowChangeEvent" msprop:Generator_RowClassName="tblTestRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TestId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnTestId" msprop:Generator_ColumnPropNameInRow="TestId" msprop:Generator_ColumnPropNameInTable="TestIdColumn" msprop:Generator_UserColumnName="TestId" type="xs:int" />
@@ -238,7 +238,7 @@ SELECT Id, TestID, QuestionID FROM tblIDHolder WHERE (Id = @Id)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tblIDHolder" msprop:Generator_TableClassName="tblIDHolderDataTable" msprop:Generator_TableVarName="tabletblIDHolder" msprop:Generator_RowChangedName="tblIDHolderRowChanged" msprop:Generator_TablePropName="tblIDHolder" msprop:Generator_RowDeletingName="tblIDHolderRowDeleting" msprop:Generator_RowChangingName="tblIDHolderRowChanging" msprop:Generator_RowEvHandlerName="tblIDHolderRowChangeEventHandler" msprop:Generator_RowDeletedName="tblIDHolderRowDeleted" msprop:Generator_RowClassName="tblIDHolderRow" msprop:Generator_UserTableName="tblIDHolder" msprop:Generator_RowEvArgName="tblIDHolderRowChangeEvent">
+        <xs:element name="tblTestQuestion" msprop:Generator_TableClassName="tblTestQuestionDataTable" msprop:Generator_TableVarName="tabletblTestQuestion" msprop:Generator_TablePropName="tblTestQuestion" msprop:Generator_RowDeletingName="tblTestQuestionRowDeleting" msprop:Generator_RowChangingName="tblTestQuestionRowChanging" msprop:Generator_RowEvHandlerName="tblTestQuestionRowChangeEventHandler" msprop:Generator_RowDeletedName="tblTestQuestionRowDeleted" msprop:Generator_UserTableName="tblTestQuestion" msprop:Generator_RowChangedName="tblTestQuestionRowChanged" msprop:Generator_RowEvArgName="tblTestQuestionRowChangeEvent" msprop:Generator_RowClassName="tblTestQuestionRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -257,23 +257,23 @@ SELECT Id, TestID, QuestionID FROM tblIDHolder WHERE (Id = @Id)</CommandText>
       <xs:selector xpath=".//mstns:tblTest" />
       <xs:field xpath="mstns:TestId" />
     </xs:unique>
-    <xs:unique name="tblIDHolder_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:tblIDHolder" />
+    <xs:unique name="tblTestQuestion_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tblTestQuestion" />
       <xs:field xpath="mstns:Id" />
     </xs:unique>
     <xs:unique name="TestIDKey">
-      <xs:selector xpath=".//mstns:tblIDHolder" />
+      <xs:selector xpath=".//mstns:tblTestQuestion" />
       <xs:field xpath="mstns:TestID" />
     </xs:unique>
     <xs:unique name="QuestionIDKey">
-      <xs:selector xpath=".//mstns:tblIDHolder" />
+      <xs:selector xpath=".//mstns:tblTestQuestion" />
       <xs:field xpath="mstns:QuestionID" />
     </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="tblIDHolder_tblTest" msdata:parent="tblIDHolder" msdata:child="tblTest" msdata:parentkey="TestID" msdata:childkey="TestId" msprop:Generator_UserChildTable="tblTest" msprop:Generator_ChildPropName="GettblTestRows" msprop:Generator_UserRelationName="tblIDHolder_tblTest" msprop:Generator_RelationVarName="relationtblIDHolder_tblTest" msprop:Generator_UserParentTable="tblIDHolder" msprop:Generator_ParentPropName="tblIDHolderRow" />
-      <msdata:Relationship name="tblIDHolder_QuestionTable" msdata:parent="tblIDHolder" msdata:child="QuestionTable" msdata:parentkey="QuestionID" msdata:childkey="Id" msprop:Generator_UserChildTable="QuestionTable" msprop:Generator_ChildPropName="GetQuestionTableRows" msprop:Generator_UserRelationName="tblIDHolder_QuestionTable" msprop:Generator_RelationVarName="relationtblIDHolder_QuestionTable" msprop:Generator_UserParentTable="tblIDHolder" msprop:Generator_ParentPropName="tblIDHolderRow" />
+      <msdata:Relationship name="tblIDHolder_tblTest" msdata:parent="tblTestQuestion" msdata:child="tblTest" msdata:parentkey="TestID" msdata:childkey="TestId" msprop:Generator_UserChildTable="tblTest" msprop:Generator_ChildPropName="GettblTestRows" msprop:Generator_UserRelationName="tblIDHolder_tblTest" msprop:Generator_ParentPropName="tblTestQuestionRow" msprop:Generator_RelationVarName="relationtblIDHolder_tblTest" msprop:Generator_UserParentTable="tblTestQuestion" />
+      <msdata:Relationship name="tblIDHolder_QuestionTable" msdata:parent="tblTestQuestion" msdata:child="QuestionTable" msdata:parentkey="QuestionID" msdata:childkey="Id" msprop:Generator_UserChildTable="QuestionTable" msprop:Generator_ChildPropName="GetQuestionTableRows" msprop:Generator_UserRelationName="tblIDHolder_QuestionTable" msprop:Generator_ParentPropName="tblTestQuestionRow" msprop:Generator_RelationVarName="relationtblIDHolder_QuestionTable" msprop:Generator_UserParentTable="tblTestQuestion" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

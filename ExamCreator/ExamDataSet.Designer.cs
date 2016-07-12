@@ -28,7 +28,7 @@ namespace ExamCreator {
         
         private tblTestDataTable tabletblTest;
         
-        private tblIDHolderDataTable tabletblIDHolder;
+        private tblTestQuestionDataTable tabletblTestQuestion;
         
         private global::System.Data.DataRelation relationtblIDHolder_tblTest;
         
@@ -68,8 +68,8 @@ namespace ExamCreator {
                 if ((ds.Tables["tblTest"] != null)) {
                     base.Tables.Add(new tblTestDataTable(ds.Tables["tblTest"]));
                 }
-                if ((ds.Tables["tblIDHolder"] != null)) {
-                    base.Tables.Add(new tblIDHolderDataTable(ds.Tables["tblIDHolder"]));
+                if ((ds.Tables["tblTestQuestion"] != null)) {
+                    base.Tables.Add(new tblTestQuestionDataTable(ds.Tables["tblTestQuestion"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -113,9 +113,9 @@ namespace ExamCreator {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public tblIDHolderDataTable tblIDHolder {
+        public tblTestQuestionDataTable tblTestQuestion {
             get {
-                return this.tabletblIDHolder;
+                return this.tabletblTestQuestion;
             }
         }
         
@@ -192,8 +192,8 @@ namespace ExamCreator {
                 if ((ds.Tables["tblTest"] != null)) {
                     base.Tables.Add(new tblTestDataTable(ds.Tables["tblTest"]));
                 }
-                if ((ds.Tables["tblIDHolder"] != null)) {
-                    base.Tables.Add(new tblIDHolderDataTable(ds.Tables["tblIDHolder"]));
+                if ((ds.Tables["tblTestQuestion"] != null)) {
+                    base.Tables.Add(new tblTestQuestionDataTable(ds.Tables["tblTestQuestion"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -240,10 +240,10 @@ namespace ExamCreator {
                     this.tabletblTest.InitVars();
                 }
             }
-            this.tabletblIDHolder = ((tblIDHolderDataTable)(base.Tables["tblIDHolder"]));
+            this.tabletblTestQuestion = ((tblTestQuestionDataTable)(base.Tables["tblTestQuestion"]));
             if ((initTable == true)) {
-                if ((this.tabletblIDHolder != null)) {
-                    this.tabletblIDHolder.InitVars();
+                if ((this.tabletblTestQuestion != null)) {
+                    this.tabletblTestQuestion.InitVars();
                 }
             }
             this.relationtblIDHolder_tblTest = this.Relations["tblIDHolder_tblTest"];
@@ -262,14 +262,14 @@ namespace ExamCreator {
             base.Tables.Add(this.tableQuestionTable);
             this.tabletblTest = new tblTestDataTable();
             base.Tables.Add(this.tabletblTest);
-            this.tabletblIDHolder = new tblIDHolderDataTable();
-            base.Tables.Add(this.tabletblIDHolder);
+            this.tabletblTestQuestion = new tblTestQuestionDataTable();
+            base.Tables.Add(this.tabletblTestQuestion);
             this.relationtblIDHolder_tblTest = new global::System.Data.DataRelation("tblIDHolder_tblTest", new global::System.Data.DataColumn[] {
-                        this.tabletblIDHolder.TestIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tabletblTestQuestion.TestIDColumn}, new global::System.Data.DataColumn[] {
                         this.tabletblTest.TestIdColumn}, false);
             this.Relations.Add(this.relationtblIDHolder_tblTest);
             this.relationtblIDHolder_QuestionTable = new global::System.Data.DataRelation("tblIDHolder_QuestionTable", new global::System.Data.DataColumn[] {
-                        this.tabletblIDHolder.QuestionIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tabletblTestQuestion.QuestionIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableQuestionTable.IdColumn}, false);
             this.Relations.Add(this.relationtblIDHolder_QuestionTable);
         }
@@ -288,7 +288,7 @@ namespace ExamCreator {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializetblIDHolder() {
+        private bool ShouldSerializetblTestQuestion() {
             return false;
         }
         
@@ -354,7 +354,7 @@ namespace ExamCreator {
         public delegate void tblTestRowChangeEventHandler(object sender, tblTestRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void tblIDHolderRowChangeEventHandler(object sender, tblIDHolderRowChangeEvent e);
+        public delegate void tblTestQuestionRowChangeEventHandler(object sender, tblTestQuestionRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1023,7 +1023,7 @@ namespace ExamCreator {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class tblIDHolderDataTable : global::System.Data.TypedTableBase<tblIDHolderRow> {
+        public partial class tblTestQuestionDataTable : global::System.Data.TypedTableBase<tblTestQuestionRow> {
             
             private global::System.Data.DataColumn columnId;
             
@@ -1033,8 +1033,8 @@ namespace ExamCreator {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tblIDHolderDataTable() {
-                this.TableName = "tblIDHolder";
+            public tblTestQuestionDataTable() {
+                this.TableName = "tblTestQuestion";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -1042,7 +1042,7 @@ namespace ExamCreator {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal tblIDHolderDataTable(global::System.Data.DataTable table) {
+            internal tblTestQuestionDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -1059,7 +1059,7 @@ namespace ExamCreator {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected tblIDHolderDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected tblTestQuestionDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -1099,54 +1099,54 @@ namespace ExamCreator {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tblIDHolderRow this[int index] {
+            public tblTestQuestionRow this[int index] {
                 get {
-                    return ((tblIDHolderRow)(this.Rows[index]));
+                    return ((tblTestQuestionRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event tblIDHolderRowChangeEventHandler tblIDHolderRowChanging;
+            public event tblTestQuestionRowChangeEventHandler tblTestQuestionRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event tblIDHolderRowChangeEventHandler tblIDHolderRowChanged;
+            public event tblTestQuestionRowChangeEventHandler tblTestQuestionRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event tblIDHolderRowChangeEventHandler tblIDHolderRowDeleting;
+            public event tblTestQuestionRowChangeEventHandler tblTestQuestionRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event tblIDHolderRowChangeEventHandler tblIDHolderRowDeleted;
+            public event tblTestQuestionRowChangeEventHandler tblTestQuestionRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddtblIDHolderRow(tblIDHolderRow row) {
+            public void AddtblTestQuestionRow(tblTestQuestionRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tblIDHolderRow AddtblIDHolderRow(int Id, int TestID, int QuestionID) {
-                tblIDHolderRow rowtblIDHolderRow = ((tblIDHolderRow)(this.NewRow()));
+            public tblTestQuestionRow AddtblTestQuestionRow(int Id, int TestID, int QuestionID) {
+                tblTestQuestionRow rowtblTestQuestionRow = ((tblTestQuestionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Id,
                         TestID,
                         QuestionID};
-                rowtblIDHolderRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowtblIDHolderRow);
-                return rowtblIDHolderRow;
+                rowtblTestQuestionRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowtblTestQuestionRow);
+                return rowtblTestQuestionRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tblIDHolderRow FindById(int Id) {
-                return ((tblIDHolderRow)(this.Rows.Find(new object[] {
+            public tblTestQuestionRow FindById(int Id) {
+                return ((tblTestQuestionRow)(this.Rows.Find(new object[] {
                             Id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                tblIDHolderDataTable cln = ((tblIDHolderDataTable)(base.Clone()));
+                tblTestQuestionDataTable cln = ((tblTestQuestionDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1154,7 +1154,7 @@ namespace ExamCreator {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new tblIDHolderDataTable();
+                return new tblTestQuestionDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1188,28 +1188,28 @@ namespace ExamCreator {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tblIDHolderRow NewtblIDHolderRow() {
-                return ((tblIDHolderRow)(this.NewRow()));
+            public tblTestQuestionRow NewtblTestQuestionRow() {
+                return ((tblTestQuestionRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new tblIDHolderRow(builder);
+                return new tblTestQuestionRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(tblIDHolderRow);
+                return typeof(tblTestQuestionRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.tblIDHolderRowChanged != null)) {
-                    this.tblIDHolderRowChanged(this, new tblIDHolderRowChangeEvent(((tblIDHolderRow)(e.Row)), e.Action));
+                if ((this.tblTestQuestionRowChanged != null)) {
+                    this.tblTestQuestionRowChanged(this, new tblTestQuestionRowChangeEvent(((tblTestQuestionRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1217,8 +1217,8 @@ namespace ExamCreator {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.tblIDHolderRowChanging != null)) {
-                    this.tblIDHolderRowChanging(this, new tblIDHolderRowChangeEvent(((tblIDHolderRow)(e.Row)), e.Action));
+                if ((this.tblTestQuestionRowChanging != null)) {
+                    this.tblTestQuestionRowChanging(this, new tblTestQuestionRowChangeEvent(((tblTestQuestionRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1226,8 +1226,8 @@ namespace ExamCreator {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.tblIDHolderRowDeleted != null)) {
-                    this.tblIDHolderRowDeleted(this, new tblIDHolderRowChangeEvent(((tblIDHolderRow)(e.Row)), e.Action));
+                if ((this.tblTestQuestionRowDeleted != null)) {
+                    this.tblTestQuestionRowDeleted(this, new tblTestQuestionRowChangeEvent(((tblTestQuestionRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1235,14 +1235,14 @@ namespace ExamCreator {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.tblIDHolderRowDeleting != null)) {
-                    this.tblIDHolderRowDeleting(this, new tblIDHolderRowChangeEvent(((tblIDHolderRow)(e.Row)), e.Action));
+                if ((this.tblTestQuestionRowDeleting != null)) {
+                    this.tblTestQuestionRowDeleting(this, new tblTestQuestionRowChangeEvent(((tblTestQuestionRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemovetblIDHolderRow(tblIDHolderRow row) {
+            public void RemovetblTestQuestionRow(tblTestQuestionRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1269,7 +1269,7 @@ namespace ExamCreator {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "tblIDHolderDataTable";
+                attribute2.FixedValue = "tblTestQuestionDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1419,9 +1419,9 @@ namespace ExamCreator {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tblIDHolderRow tblIDHolderRow {
+            public tblTestQuestionRow tblTestQuestionRow {
                 get {
-                    return ((tblIDHolderRow)(this.GetParentRow(this.Table.ParentRelations["tblIDHolder_QuestionTable"])));
+                    return ((tblTestQuestionRow)(this.GetParentRow(this.Table.ParentRelations["tblIDHolder_QuestionTable"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["tblIDHolder_QuestionTable"]);
@@ -1490,9 +1490,9 @@ namespace ExamCreator {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tblIDHolderRow tblIDHolderRow {
+            public tblTestQuestionRow tblTestQuestionRow {
                 get {
-                    return ((tblIDHolderRow)(this.GetParentRow(this.Table.ParentRelations["tblIDHolder_tblTest"])));
+                    return ((tblTestQuestionRow)(this.GetParentRow(this.Table.ParentRelations["tblIDHolder_tblTest"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["tblIDHolder_tblTest"]);
@@ -1503,25 +1503,25 @@ namespace ExamCreator {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class tblIDHolderRow : global::System.Data.DataRow {
+        public partial class tblTestQuestionRow : global::System.Data.DataRow {
             
-            private tblIDHolderDataTable tabletblIDHolder;
+            private tblTestQuestionDataTable tabletblTestQuestion;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal tblIDHolderRow(global::System.Data.DataRowBuilder rb) : 
+            internal tblTestQuestionRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tabletblIDHolder = ((tblIDHolderDataTable)(this.Table));
+                this.tabletblTestQuestion = ((tblTestQuestionDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int Id {
                 get {
-                    return ((int)(this[this.tabletblIDHolder.IdColumn]));
+                    return ((int)(this[this.tabletblTestQuestion.IdColumn]));
                 }
                 set {
-                    this[this.tabletblIDHolder.IdColumn] = value;
+                    this[this.tabletblTestQuestion.IdColumn] = value;
                 }
             }
             
@@ -1530,14 +1530,14 @@ namespace ExamCreator {
             public int TestID {
                 get {
                     try {
-                        return ((int)(this[this.tabletblIDHolder.TestIDColumn]));
+                        return ((int)(this[this.tabletblTestQuestion.TestIDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TestID\' in table \'tblIDHolder\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'TestID\' in table \'tblTestQuestion\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblIDHolder.TestIDColumn] = value;
+                    this[this.tabletblTestQuestion.TestIDColumn] = value;
                 }
             }
             
@@ -1546,39 +1546,39 @@ namespace ExamCreator {
             public int QuestionID {
                 get {
                     try {
-                        return ((int)(this[this.tabletblIDHolder.QuestionIDColumn]));
+                        return ((int)(this[this.tabletblTestQuestion.QuestionIDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'QuestionID\' in table \'tblIDHolder\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'QuestionID\' in table \'tblTestQuestion\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblIDHolder.QuestionIDColumn] = value;
+                    this[this.tabletblTestQuestion.QuestionIDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsTestIDNull() {
-                return this.IsNull(this.tabletblIDHolder.TestIDColumn);
+                return this.IsNull(this.tabletblTestQuestion.TestIDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTestIDNull() {
-                this[this.tabletblIDHolder.TestIDColumn] = global::System.Convert.DBNull;
+                this[this.tabletblTestQuestion.TestIDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsQuestionIDNull() {
-                return this.IsNull(this.tabletblIDHolder.QuestionIDColumn);
+                return this.IsNull(this.tabletblTestQuestion.QuestionIDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetQuestionIDNull() {
-                this[this.tabletblIDHolder.QuestionIDColumn] = global::System.Convert.DBNull;
+                this[this.tabletblTestQuestion.QuestionIDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1676,22 +1676,22 @@ namespace ExamCreator {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class tblIDHolderRowChangeEvent : global::System.EventArgs {
+        public class tblTestQuestionRowChangeEvent : global::System.EventArgs {
             
-            private tblIDHolderRow eventRow;
+            private tblTestQuestionRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tblIDHolderRowChangeEvent(tblIDHolderRow row, global::System.Data.DataRowAction action) {
+            public tblTestQuestionRowChangeEvent(tblTestQuestionRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tblIDHolderRow Row {
+            public tblTestQuestionRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2410,7 +2410,7 @@ SELECT Id, Difficulty, QuestionTitle, Privacy, Image, QuestionText, Mark, Topic 
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class tblIDHolderTableAdapter : global::System.ComponentModel.Component {
+    public partial class tblTestQuestionTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -2424,7 +2424,7 @@ SELECT Id, Difficulty, QuestionTitle, Privacy, Image, QuestionText, Mark, Topic 
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public tblIDHolderTableAdapter() {
+        public tblTestQuestionTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -2521,7 +2521,7 @@ SELECT Id, Difficulty, QuestionTitle, Privacy, Image, QuestionText, Mark, Topic 
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "tblIDHolder";
+            tableMapping.DataSetTable = "tblTestQuestion";
             tableMapping.ColumnMappings.Add("Id", "Id");
             tableMapping.ColumnMappings.Add("TestID", "TestID");
             tableMapping.ColumnMappings.Add("QuestionID", "QuestionID");
@@ -2582,7 +2582,7 @@ SELECT Id, TestID, QuestionID FROM tblIDHolder WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ExamDataSet.tblIDHolderDataTable dataTable) {
+        public virtual int Fill(ExamDataSet.tblTestQuestionDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2595,9 +2595,9 @@ SELECT Id, TestID, QuestionID FROM tblIDHolder WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ExamDataSet.tblIDHolderDataTable GetData() {
+        public virtual ExamDataSet.tblTestQuestionDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ExamDataSet.tblIDHolderDataTable dataTable = new ExamDataSet.tblIDHolderDataTable();
+            ExamDataSet.tblTestQuestionDataTable dataTable = new ExamDataSet.tblTestQuestionDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2605,7 +2605,7 @@ SELECT Id, TestID, QuestionID FROM tblIDHolder WHERE (Id = @Id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ExamDataSet.tblIDHolderDataTable dataTable) {
+        public virtual int Update(ExamDataSet.tblTestQuestionDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -2613,7 +2613,7 @@ SELECT Id, TestID, QuestionID FROM tblIDHolder WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(ExamDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "tblIDHolder");
+            return this.Adapter.Update(dataSet, "tblTestQuestion");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2779,7 +2779,7 @@ SELECT Id, TestID, QuestionID FROM tblIDHolder WHERE (Id = @Id)";
         
         private tblTestTableAdapter _tblTestTableAdapter;
         
-        private tblIDHolderTableAdapter _tblIDHolderTableAdapter;
+        private tblTestQuestionTableAdapter _tblTestQuestionTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -2829,12 +2829,12 @@ SELECT Id, TestID, QuestionID FROM tblIDHolder WHERE (Id = @Id)";
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public tblIDHolderTableAdapter tblIDHolderTableAdapter {
+        public tblTestQuestionTableAdapter tblTestQuestionTableAdapter {
             get {
-                return this._tblIDHolderTableAdapter;
+                return this._tblTestQuestionTableAdapter;
             }
             set {
-                this._tblIDHolderTableAdapter = value;
+                this._tblTestQuestionTableAdapter = value;
             }
         }
         
@@ -2865,9 +2865,9 @@ SELECT Id, TestID, QuestionID FROM tblIDHolder WHERE (Id = @Id)";
                             && (this._tblTestTableAdapter.Connection != null))) {
                     return this._tblTestTableAdapter.Connection;
                 }
-                if (((this._tblIDHolderTableAdapter != null) 
-                            && (this._tblIDHolderTableAdapter.Connection != null))) {
-                    return this._tblIDHolderTableAdapter.Connection;
+                if (((this._tblTestQuestionTableAdapter != null) 
+                            && (this._tblTestQuestionTableAdapter.Connection != null))) {
+                    return this._tblTestQuestionTableAdapter.Connection;
                 }
                 return null;
             }
@@ -2888,7 +2888,7 @@ SELECT Id, TestID, QuestionID FROM tblIDHolder WHERE (Id = @Id)";
                 if ((this._tblTestTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._tblIDHolderTableAdapter != null)) {
+                if ((this._tblTestQuestionTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -2902,12 +2902,12 @@ SELECT Id, TestID, QuestionID FROM tblIDHolder WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateUpdatedRows(ExamDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._tblIDHolderTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.tblIDHolder.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._tblTestQuestionTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tblTestQuestion.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._tblIDHolderTableAdapter.Update(updatedRows));
+                    result = (result + this._tblTestQuestionTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -2939,11 +2939,11 @@ SELECT Id, TestID, QuestionID FROM tblIDHolder WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateInsertedRows(ExamDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._tblIDHolderTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.tblIDHolder.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._tblTestQuestionTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tblTestQuestion.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._tblIDHolderTableAdapter.Update(addedRows));
+                    result = (result + this._tblTestQuestionTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -2989,11 +2989,11 @@ SELECT Id, TestID, QuestionID FROM tblIDHolder WHERE (Id = @Id)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._tblIDHolderTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.tblIDHolder.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._tblTestQuestionTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tblTestQuestion.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._tblIDHolderTableAdapter.Update(deletedRows));
+                    result = (result + this._tblTestQuestionTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -3046,8 +3046,8 @@ SELECT Id, TestID, QuestionID FROM tblIDHolder WHERE (Id = @Id)";
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._tblIDHolderTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._tblIDHolderTableAdapter.Connection) == false))) {
+            if (((this._tblTestQuestionTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._tblTestQuestionTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -3101,13 +3101,13 @@ SELECT Id, TestID, QuestionID FROM tblIDHolder WHERE (Id = @Id)";
                         adaptersWithAcceptChangesDuringUpdate.Add(this._tblTestTableAdapter.Adapter);
                     }
                 }
-                if ((this._tblIDHolderTableAdapter != null)) {
-                    revertConnections.Add(this._tblIDHolderTableAdapter, this._tblIDHolderTableAdapter.Connection);
-                    this._tblIDHolderTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._tblIDHolderTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._tblIDHolderTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._tblIDHolderTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._tblIDHolderTableAdapter.Adapter);
+                if ((this._tblTestQuestionTableAdapter != null)) {
+                    revertConnections.Add(this._tblTestQuestionTableAdapter, this._tblTestQuestionTableAdapter.Connection);
+                    this._tblTestQuestionTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._tblTestQuestionTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._tblTestQuestionTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._tblTestQuestionTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._tblTestQuestionTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -3176,9 +3176,9 @@ SELECT Id, TestID, QuestionID FROM tblIDHolder WHERE (Id = @Id)";
                     this._tblTestTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tblTestTableAdapter]));
                     this._tblTestTableAdapter.Transaction = null;
                 }
-                if ((this._tblIDHolderTableAdapter != null)) {
-                    this._tblIDHolderTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tblIDHolderTableAdapter]));
-                    this._tblIDHolderTableAdapter.Transaction = null;
+                if ((this._tblTestQuestionTableAdapter != null)) {
+                    this._tblTestQuestionTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tblTestQuestionTableAdapter]));
+                    this._tblTestQuestionTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
