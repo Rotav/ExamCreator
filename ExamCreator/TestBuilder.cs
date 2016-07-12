@@ -15,10 +15,16 @@ namespace ExamCreator
     {
 
         DatabaseConnectioncs objConnector;
+        DatabaseConnectioncs objConnector2;
         string stringConnector;
+        public int TestID;
 
-        public TestBuilder()
+        DataSet ds;
+
+        public TestBuilder(int testID)
         {
+            TestID = testID;
+            MessageBox.Show(TestID.ToString());
             InitializeComponent();
         }
 
@@ -33,8 +39,16 @@ namespace ExamCreator
             stringConnector = Settings.Default.DBConn;
 
             objConnector.connection_string = stringConnector;
-            objConnector.Sql = Settings.Default.SelectTeachers;
-            dg_Public.DataSource = objConnector.StudentBindingSource(); 
+            objConnector.Sql = Settings.Default.SelectQuestions;
+            dg_Public.DataSource = objConnector.StudentBindingSource();
+
+            objConnector2 = new DatabaseConnectioncs();
+
+            objConnector2.connection_string = stringConnector;
+
+            objConnector2.Sql = "SELECT * FROM tblIDHolder";
+
+            ds = objConnector2.GetConnection;
         }
 
         private void btn_AddQuestion_Click(object sender, EventArgs e)
@@ -59,7 +73,45 @@ namespace ExamCreator
             }
             else
             {
+                foreach (string item in lb_QuestionList.Items)
+                {
 
+                    MessageBox.Show("item " + item);
+                    DataRow dr = ds.Tables[0].NewRow();
+
+                    int rowIndex = -1;
+                    foreach(DataGridViewRow row in dg_Public.Rows)
+                    {
+                        MessageBox.Show("loop"+row.Cells[2].Value.ToString());
+                        if(row.Cells[2].Value.ToString().Equals(item))
+                        {
+                            rowIndex = row.Index;
+                            MessageBox.Show("pos " + rowIndex.ToString());
+                            break;
+                        }
+                    }
+
+                    
+
+                    string i2 = dg_Public["id", rowIndex].Value.ToString();
+                    MessageBox.Show("i2 " + i2);
+                    int i3;
+                    Int32.TryParse(i2, out i3);
+
+                    dr[1] = TestID;//Test ID
+                    dr[2] = i3; //Question ID
+
+                    ds.Tables[0].Rows.Add(dr);
+
+                    try
+                    {
+                        objConnector2.UpdateDatabase(ds);
+                    }
+                    catch (Exception err)
+                    {
+                        MessageBox.Show(err.ToString());
+                    }
+                }
                 SendTest sendtest = new SendTest();
                 sendtest.Show();
             }

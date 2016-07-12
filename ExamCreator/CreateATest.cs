@@ -18,7 +18,6 @@ namespace ExamCreator
 
         DataSet ds;
 
-        int maxRows;
         bool correct = false;
         DataRow dataResult;
         public CreateATest()
@@ -35,7 +34,6 @@ namespace ExamCreator
             else
             {
                 bool privacy = true;
-                int inc = 0;
 
                 if (rb_Public.Checked == true)
                 {
@@ -55,23 +53,18 @@ namespace ExamCreator
 
                 try
                 {
-                    objConnector.UpdateDatabase(ds);
-                    maxRows++;
-                    inc = maxRows - 1;
-
-                    MessageBox.Show("Your test has been successfully created.");
-                    TestBuilder testbuilder = new TestBuilder();
+                    objConnector.UpdateDatabase(ds);            
+                    int rows = ds.Tables[0].Rows.Count;
+                    MessageBox.Show(rows.ToString());
+                    MessageBox.Show("Your test has been successfully created: " + ds.Tables[0].Rows[rows-1][0].ToString());
+                    TestBuilder testbuilder = new TestBuilder(1);
                     testbuilder.Show();
                 }
                 catch(Exception err)
                 {
                     MessageBox.Show(err.ToString());
                 }
-
-                
-
             }
-
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
