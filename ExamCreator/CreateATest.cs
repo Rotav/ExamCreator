@@ -18,10 +18,11 @@ namespace ExamCreator
 
         DataSet ds;
 
-        bool correct = false;
-        DataRow dataResult;
-        public CreateATest()
+        private int teacherID;
+        public CreateATest(int TeacherID)
         {
+            teacherID = TeacherID;
+
             InitializeComponent();
         }
 
@@ -48,32 +49,32 @@ namespace ExamCreator
 
                 if (rb_GCSE.Checked == true)
                 {
-                    level = 1;
+                    level = 7;
                 }
                 else if (rb_AS.Checked == true)
                 {
-                    level = 2;
+                    level = 1;
                 }
                 else
                 {
-                    level = 3;
+                    level = 4;
                 }
 
-                DataRow dr = ds.Tables[0].NewRow();
+                DataRow dr = ds.Tables[0].NewRow(); //creates new row in table
                 
                 dr[1] = privacy;//privacy
                 dr[2] = txt_Title.Text; //Question Title
                 dr[3] = level; //Question level
                 dr[4] = txt_Description.Text; //Question description 
                 
-                ds.Tables[0].Rows.Add(dr);
+                ds.Tables[0].Rows.Add(dr); //adds row to table
 
                 try
                 {
                     objConnector.UpdateDatabase(ds);            
                     int rows = ds.Tables[0].Rows.Count;
                     MessageBox.Show("Your test has been successfully created!");
-                    TestBuilder testbuilder = new TestBuilder(rows);
+                    TestBuilder testbuilder = new TestBuilder(rows, teacherID);
                     testbuilder.Show();
                 }
                 catch(Exception err)
@@ -127,45 +128,3 @@ namespace ExamCreator
         }
     }
 }
-
-
-
-
-
-
-/*bool privacy = true;
-            if (rb_Public.Checked == true)
-            {
-                privacy = true;
-            }
-            else
-            {
-                privacy = false;
-            }
-            
-            DataRow dr = ds.Tables[0].NewRow();
-            
-            dr[1] = tbar_Difficulty.Value; //difficulty
-            dr[2] = txt_QuestionTitle.Text; //QTitle
-            dr[3] = privacy; //privacy
-            dr[4] = byteBLOBData;//image
-            dr[5] = txt_Question.Text; //QText
-            dr[6] = num_Mark.Value;//mark
-            dr[7] = lb_Topics.SelectedItem;//topic
-            
-
-            ds.Tables[0].Rows.Add(dr);
-
-            try
-            {
-                objConnector.UpdateDatabase(ds);
-                maxRows++;
-                inc = maxRows - 1;
-
-                MessageBox.Show("Your question has been added!");
-            }
-            catch
-            {
-                MessageBox.Show("Please fill in all of the empty fields");
-            }
-*/

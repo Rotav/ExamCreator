@@ -73,6 +73,7 @@
             this.btn_ViewResults.TabIndex = 3;
             this.btn_ViewResults.Text = "View results";
             this.btn_ViewResults.UseVisualStyleBackColor = false;
+            this.btn_ViewResults.Click += new System.EventHandler(this.btn_ViewResults_Click);
             // 
             // MainMenuTeacher
             // 

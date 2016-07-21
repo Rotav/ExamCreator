@@ -17,14 +17,17 @@ namespace ExamCreator
         DatabaseConnectioncs objConnector;
         DatabaseConnectioncs objConnector2;
         string stringConnector;
-        public int TestID;
+        public int testID;
 
         DataSet ds;
 
-        public TestBuilder(int testID)
+        int teacherID;
+
+        public TestBuilder(int TestID, int TeacherID)
         {
-            TestID = testID;
-            MessageBox.Show(TestID.ToString());
+            testID = TestID;
+            teacherID = TeacherID;
+
             InitializeComponent();
         }
 
@@ -67,7 +70,7 @@ namespace ExamCreator
 
         private void btn_Complete_Click(object sender, EventArgs e)
         {
-            if (lb_QuestionList.Items == null) //fix
+            if (lb_QuestionList.Items == null) 
             {
                 MessageBox.Show("You must have at least one question in the test to complete it.");
             }
@@ -75,18 +78,14 @@ namespace ExamCreator
             {
                 foreach (string item in lb_QuestionList.Items)
                 {
-
-                    MessageBox.Show("item " + item);
                     DataRow dr = ds.Tables[0].NewRow();
 
                     int rowIndex = -1;
                     foreach(DataGridViewRow row in dg_Public.Rows)
                     {
-                        MessageBox.Show("loop"+row.Cells[2].Value.ToString());
                         if(row.Cells[2].Value.ToString().Equals(item))
                         {
                             rowIndex = row.Index;
-                            MessageBox.Show("pos " + rowIndex.ToString());
                             break;
                         }
                     }
@@ -94,11 +93,10 @@ namespace ExamCreator
                     
 
                     string i2 = dg_Public["id", rowIndex].Value.ToString();
-                    MessageBox.Show("i2 " + i2);
                     int i3;
                     Int32.TryParse(i2, out i3);
 
-                    dr[1] = TestID;//Test ID
+                    dr[1] = testID;//Test ID
                     dr[2] = i3; //Question ID
 
                     ds.Tables[0].Rows.Add(dr);
@@ -112,21 +110,13 @@ namespace ExamCreator
                         MessageBox.Show(err.ToString());
                     }
                 }
-                SendTest sendtest = new SendTest(1);
+                SendTest sendtest = new SendTest(testID, teacherID);
                 sendtest.Show();
             }
         }
 
         private void lb_QuestionList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*for (int i = 0; i < length; i++)
-            {
-                if (lb_QuestionList.GetItemText(lb_QuestionList.SelectedItem) == dg_Public.["QuestionContent", i])
-                {
-
-                }
-			}*/
-
             string content = lb_QuestionList.GetItemText(lb_QuestionList.SelectedItem);
             lab_QuestionContent.Text = lb_QuestionList.GetItemText(lb_QuestionList.SelectedItem);
             lab_Mark.Text = lb_QuestionList.GetItemText(lb_QuestionList.SelectedItem);

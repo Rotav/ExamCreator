@@ -85,7 +85,6 @@
             this.label2.Size = new System.Drawing.Size(67, 17);
             this.label2.TabIndex = 27;
             this.label2.Text = "Question";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -96,7 +95,6 @@
             this.label1.Size = new System.Drawing.Size(93, 17);
             this.label1.TabIndex = 26;
             this.label1.Text = "Question title";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label3
             // 
@@ -107,7 +105,6 @@
             this.label3.Size = new System.Drawing.Size(75, 17);
             this.label3.TabIndex = 37;
             this.label3.Text = "Raw mark";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // num_Mark
             // 
@@ -139,7 +136,6 @@
             this.label5.Size = new System.Drawing.Size(63, 17);
             this.label5.TabIndex = 39;
             this.label5.Text = "Difficulty";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // tbar_Difficulty
             // 
@@ -214,7 +210,6 @@
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Privacy";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // QuestionCreator
             // 

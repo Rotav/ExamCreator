@@ -46,9 +46,9 @@ namespace ExamCreator
             {
                 for (int i = 0; i < maxRows; i++)
                 {
-                    dr = ds.Tables[0].Rows[i];
+                    dr = ds.Tables[0].Rows[i]; 
                     if (txt_Username.Text == dr.ItemArray.GetValue(1).ToString() && txt_Password.Text == dr.ItemArray.GetValue(2).ToString())
-                    {
+                    { //checks if the database has the same values as what has been entered into the textboxes.
                         dataResult = dr;
                         correct = true;
                         break;
@@ -56,7 +56,9 @@ namespace ExamCreator
                 }
                 if (correct)
                 {
-                    MainMenuTeacher mainmenu = new MainMenuTeacher();
+                    int teachID;
+                    Int32.TryParse(dr["Id"].ToString(), out teachID);
+                    MainMenuTeacher mainmenu = new MainMenuTeacher(teachID);
                     mainmenu.Show();
                 }
                 else
@@ -78,7 +80,9 @@ namespace ExamCreator
                 }
                 if (correct)
                 {
-                    MainMenuStudent mainmenu = new MainMenuStudent();
+                    int studentId;
+                    Int32.TryParse(dr2["Id"].ToString(), out studentId);
+                    MainMenuStudent mainmenu = new MainMenuStudent(studentId);
                     mainmenu.Show();
                 }
                 else
@@ -133,18 +137,6 @@ namespace ExamCreator
             {
                 MessageBox.Show(error.Message);
             }
-        }
-
-        private void lbl_Password_Click(object sender, EventArgs e)
-        {
-            QuestionCreator questioncreator = new QuestionCreator();
-            questioncreator.Show();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-            MainMenuTeacher mainmenu = new MainMenuTeacher();
-            mainmenu.Show();
         }
     }
 }

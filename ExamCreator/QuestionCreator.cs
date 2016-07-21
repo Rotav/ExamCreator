@@ -15,14 +15,10 @@ namespace ExamCreator
     public partial class QuestionCreator : Form
     {
         DatabaseConnectioncs objConnector;
-        string stringConnector;
 
         DataSet ds;
-        DataRow dr;
 
         int maxRows;
-        bool correct = false;
-        DataRow dataResult;
         
         public QuestionCreator()
         {
@@ -46,26 +42,6 @@ namespace ExamCreator
             }
         }
 
- /*       private void btn_UploadImage_Click(object sender, EventArgs e)
-        {
-             DialogResult result = openFileDialog1.ShowDialog();
-             if (result == DialogResult.OK)
-             {
-                FileStream fsBLOBFile = new FileStream(openFileDialog1.FileName, FileMode.Open, FileAccess.Read);
-                 byteBLOBData = new Byte[fsBLOBFile.Length];
-
-                 fsBLOBFile.Read(byteBLOBData, 0, byteBLOBData.Length);
-
-                 fsBLOBFile.Close();
-
-                 MemoryStream stmBLOBData = new MemoryStream(byteBLOBData);
-
-                 pb_QuestionImage.Image = Image.FromStream(stmBLOBData);
-             }
-        }*/
-
-        public byte[] byteBLOBData { get; set; }
-
         private void btn_SubmitQuestion_Click(object sender, EventArgs e)
         {
             bool privacy = true;
@@ -85,7 +61,6 @@ namespace ExamCreator
             dr[1] = tbar_Difficulty.Value; //difficulty
             dr[2] = txt_QuestionTitle.Text; //QTitle
             dr[3] = privacy; //privacy
-            dr[4] = byteBLOBData;//image
             dr[5] = txt_Question.Text; //QText
             dr[6] = num_Mark.Value;//mark
             dr[7] = lb_Topics.SelectedItem;//topic
@@ -106,31 +81,6 @@ namespace ExamCreator
                 MessageBox.Show("Please fill in all of the empty fields");
             }
              
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -12,8 +12,12 @@ namespace ExamCreator
 {
     public partial class MainMenuTeacher : Form
     {
-        public MainMenuTeacher()
+        private int teacherID;
+
+        public MainMenuTeacher(int TeacherID)
         {
+            teacherID = TeacherID;
+
             InitializeComponent();
         }
 
@@ -25,8 +29,14 @@ namespace ExamCreator
 
         private void btn_CreateTest_Click(object sender, EventArgs e)
         {
-            CreateATest createatest = new CreateATest();
+            CreateATest createatest = new CreateATest(teacherID);
             createatest.Show();
+        }
+
+        private void btn_ViewResults_Click(object sender, EventArgs e)
+        {
+            ResultsDisplay resultsdisplay = new ResultsDisplay();
+            resultsdisplay.Show();
         }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,9 +17,6 @@ namespace ExamCreator
         private string strCon;
         System.Data.SqlClient.SqlDataAdapter da_1;
 
-        int MaxRows;
-        int inc = 0;
-
         public string Sql
         {
             set { sql_string = value; }
@@ -30,7 +29,7 @@ namespace ExamCreator
 
         public System.Data.DataSet GetConnection
         {
-            get { return MyDataSet();  }
+            get { return MyDataSet(); }
         }
 
         public System.Data.DataSet MyDataSet()
@@ -38,12 +37,20 @@ namespace ExamCreator
             System.Data.SqlClient.SqlConnection con = new System.Data.SqlClient.SqlConnection(strCon);
 
             con.Open();
-            
+
             da_1 = new System.Data.SqlClient.SqlDataAdapter(sql_string, con);
 
             System.Data.DataSet dat_set = new System.Data.DataSet();
 
-            da_1.Fill(dat_set, "Table_Data_1");
+            try
+            {
+                da_1.Fill(dat_set, "Table_Data_1");
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+
 
             con.Close();
 
@@ -103,7 +110,7 @@ namespace ExamCreator
             cb.QuotePrefix = "[";
             cb.QuoteSuffix = "]";
             cb.DataAdapter.Update(ds.Tables[0]);
-            
+
         }
 
 

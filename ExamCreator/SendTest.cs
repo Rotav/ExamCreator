@@ -17,11 +17,15 @@ namespace ExamCreator
         string stringConnector;
         DataSet ds;
         DatabaseConnectioncs objConnector2;
-        public int TestID;
+        
+        public int testID;
+        public int teacherID;
 
-        public SendTest(int testID)
+        public SendTest(int TestID, int TeacherID)
         {
-            TestID = testID;
+            testID = TestID;
+            teacherID = TeacherID;
+
             InitializeComponent();
         }
 
@@ -47,11 +51,7 @@ namespace ExamCreator
 
         private void btn_AddToList_Click(object sender, EventArgs e)
         {
-            //string ForenameValue = dg_Students["Forename", dg_Students.CurrentRow.Index].Value.ToString();
-            //string surnameValue = dg_Students["Surname", dg_Students.CurrentRow.Index].Value.ToString();
             string UserValue = dg_Students["Username", dg_Students.CurrentRow.Index].Value.ToString();
-
-            //string sendUserText = UserValue + " (" + ForenameValue + " " + SurnameValue + ")";
             
             if (lb_SendUsers.Items.Contains(UserValue))
             {
@@ -71,7 +71,7 @@ namespace ExamCreator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (lb_SendUsers.Items == null) //fix
+            if (lb_SendUsers.Items == null)
             {
                 MessageBox.Show("You must have at least one question in the test to complete it.");
             }
@@ -95,8 +95,9 @@ namespace ExamCreator
                     int i3;
                     Int32.TryParse(i2, out i3);
 
-                    dr[1] = TestID;//Test ID
+                    dr[1] = testID;//Test ID
                     dr[2] = i3; //Student ID
+                    dr[3] = teacherID; //Teacher ID
 
                     ds.Tables[0].Rows.Add(dr);
 

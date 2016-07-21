@@ -1,8 +1,8 @@
-﻿using ExamCreator.Properties;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,26 +11,22 @@ using System.Windows.Forms;
 
 namespace ExamCreator
 {
-    public partial class MainMenuStudent : Form
+    public partial class ResultsDisplay : Form
     {
         DatabaseConnectioncs objConnector;
         DatabaseConnectioncs objConnector2;
-
-        string stringConnector;
         DataSet ds;
-        private int studentID;
 
-        public MainMenuStudent(int Studentid)
+        public ResultsDisplay()
         {
-            studentID = Studentid;
             InitializeComponent();
             CreateTabs();
-            AddTests();
+            AddResults();
         }
 
         private void CreateTabs()
         {
-            string query = "SELECT * FROM tblTestLevel";
+            string query = "SELECT * FROM tblStudent";
 
             try
             {
@@ -47,28 +43,44 @@ namespace ExamCreator
 
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
-                tb_Menu.TabPages.Add(dr["Level"].ToString());
+                tb_Results.TabPages.Add(dr["Username"].ToString());
+                tb_CompletedResults.TabPages.Add(dr["Username"].ToString());
             }
         }
 
-        private void AddTests()
+        private void AddResults()
         {
+
             int i = 1;
 
-            foreach (TabPage tab in tb_Menu.TabPages)
+            foreach (TabPage tab in tb_Results.TabPages)
             {
+                string query = "SELECT Id FROM tblStudent WHERE Username = " + tab.Text;
+
+                objConnector = new DatabaseConnectioncs();
+                objConnector.connection_string = ExamCreator.Properties.Settings.Default.DBConn;
+                objConnector.Sql = query;
+
+                ds = objConnector.GetConnection;
+
+                DataRow dr1 = ds.Tables[0].Rows[0];
+                string student = dr1["Id"].ToString();
+                Debug.WriteLine(student);
+                int studentID;
+                Int32.TryParse(student, out studentID);
+
                 string query2 = "SELECT *" +
-                    " FROM tblTest t, tblStudentTests s" +
-                    " WHERE s.StudentId = " + studentID.ToString() +
-                    " AND t.TestId = s.TestId" +
-                    " AND t.LevelId = " + i.ToString() +
-                    " AND s.Completed = 0";
+                " FROM tblTest t, tblStudentTests s" +
+                " WHERE t.TestId = s.TestId" +
+                " AND s.StudentID = " + studentID +
+                " AND s.Completed = 1";
 
                 objConnector2 = new DatabaseConnectioncs();
                 objConnector2.connection_string = ExamCreator.Properties.Settings.Default.DBConn;
                 objConnector2.Sql = query2;
 
-                ds = objConnector2.GetConnection; //calls Database connection class
+
+                ds = objConnector2.GetConnection;
 
                 FlowLayoutPanel flp = new FlowLayoutPanel();
                 flp.Dock = DockStyle.Fill;
@@ -78,7 +90,7 @@ namespace ExamCreator
                     Label label = new Label();
                     label.Text = "There are no tests in this tab.";
 
-                    flp.Controls.Add(label);//creates label
+                    flp.Controls.Add(label);
                 }
                 else
                 {
@@ -87,40 +99,31 @@ namespace ExamCreator
                         TestButton button = new TestButton();
                         button.Size = new Size(250, 50);
                         button.Text = dr["TestTitle"].ToString() + "    " + dr["Description"].ToString();
-                        
+
                         int testID;
-                        Int32.TryParse(dr["TestId"].ToString(), out testID);
+                        Int32.TryParse(dr["TestID"].ToString(), out testID);
                         button.TestId = testID;
 
                         int studentTestID;
                         Int32.TryParse(dr["Id"].ToString(), out studentTestID);
                         button.StudentTestID = studentTestID;
 
-                        button.Click += new EventHandler(this.OpenTest);
+                        button.Click += new EventHandler(this.OpenResults);
 
                         flp.Controls.Add(button);
                     }
                 }
 
                 tab.Controls.Add(flp);
-                i = i+3;
+                i = i + 3;
             }
         }
 
-        private void OpenTest(Object sense, EventArgs e)
+        private void OpenResults(Object sense, EventArgs e)
         {
             TestButton button = sense as TestButton;
-            Test test = new Test(button.TestId, button.StudentTestID); //opens test form, passes values 
-            test.Show();
-        }
-
-        private void MainMenuStudent_Load(object sender, EventArgs e)
-        {
-            objConnector = new DatabaseConnectioncs();
-            objConnector.connection_string = ExamCreator.Properties.Settings.Default.DBConn;
-            objConnector.Sql = "SELECT * FROM tblTest";
-
-            ds = objConnector.GetConnection;
+            MarkingForm markingform = new MarkingForm(button.TestId, button.StudentTestID);
+            markingform.Show();
         }
     }
 }
