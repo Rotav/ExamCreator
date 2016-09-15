@@ -32,15 +32,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btn_CreateTest = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txt_Description = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.rb_GCSE = new System.Windows.Forms.RadioButton();
-            this.label3 = new System.Windows.Forms.Label();
-            this.rb_A2 = new System.Windows.Forms.RadioButton();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.rb_AS = new System.Windows.Forms.RadioButton();
-            this.label2 = new System.Windows.Forms.Label();
+            this.rb_A2 = new System.Windows.Forms.RadioButton();
+            this.rb_GCSE = new System.Windows.Forms.RadioButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.rb_Private = new System.Windows.Forms.RadioButton();
             this.rb_Public = new System.Windows.Forms.RadioButton();
+            this.txt_Description = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -49,9 +51,11 @@
             this.tp_Private = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.examDataSet1 = new ExamCreator.ExamDataSet();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.cb_Level = new System.Windows.Forms.ComboBox();
+            this.lb_Filter = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tp_Public.SuspendLayout();
@@ -59,8 +63,6 @@
             this.tp_Private.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.examDataSet1)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_Title
@@ -112,55 +114,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Create test";
             // 
-            // txt_Description
+            // panel2
             // 
-            this.txt_Description.Location = new System.Drawing.Point(98, 53);
-            this.txt_Description.Multiline = true;
-            this.txt_Description.Name = "txt_Description";
-            this.txt_Description.Size = new System.Drawing.Size(311, 63);
-            this.txt_Description.TabIndex = 10;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(7, 53);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 17);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Description";
-            // 
-            // rb_GCSE
-            // 
-            this.rb_GCSE.AutoSize = true;
-            this.rb_GCSE.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.rb_GCSE.Location = new System.Drawing.Point(94, 3);
-            this.rb_GCSE.Name = "rb_GCSE";
-            this.rb_GCSE.Size = new System.Drawing.Size(53, 18);
-            this.rb_GCSE.TabIndex = 9;
-            this.rb_GCSE.Text = "GCSE";
-            this.rb_GCSE.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 11F);
-            this.label3.Location = new System.Drawing.Point(13, 154);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 17);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Test level";
-            // 
-            // rb_A2
-            // 
-            this.rb_A2.AutoSize = true;
-            this.rb_A2.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.rb_A2.Location = new System.Drawing.Point(49, 3);
-            this.rb_A2.Name = "rb_A2";
-            this.rb_A2.Size = new System.Drawing.Size(39, 18);
-            this.rb_A2.TabIndex = 7;
-            this.rb_A2.Text = "A2";
-            this.rb_A2.UseVisualStyleBackColor = true;
+            this.panel2.Controls.Add(this.rb_AS);
+            this.panel2.Controls.Add(this.rb_A2);
+            this.panel2.Controls.Add(this.rb_GCSE);
+            this.panel2.Location = new System.Drawing.Point(98, 152);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(180, 23);
+            this.panel2.TabIndex = 13;
             // 
             // rb_AS
             // 
@@ -175,16 +137,36 @@
             this.rb_AS.Text = "AS";
             this.rb_AS.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // rb_A2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 11F);
-            this.label2.Location = new System.Drawing.Point(7, 122);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 17);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Test privacy";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.rb_A2.AutoSize = true;
+            this.rb_A2.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.rb_A2.Location = new System.Drawing.Point(49, 3);
+            this.rb_A2.Name = "rb_A2";
+            this.rb_A2.Size = new System.Drawing.Size(39, 18);
+            this.rb_A2.TabIndex = 7;
+            this.rb_A2.Text = "A2";
+            this.rb_A2.UseVisualStyleBackColor = true;
+            // 
+            // rb_GCSE
+            // 
+            this.rb_GCSE.AutoSize = true;
+            this.rb_GCSE.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.rb_GCSE.Location = new System.Drawing.Point(94, 3);
+            this.rb_GCSE.Name = "rb_GCSE";
+            this.rb_GCSE.Size = new System.Drawing.Size(53, 18);
+            this.rb_GCSE.TabIndex = 9;
+            this.rb_GCSE.Text = "GCSE";
+            this.rb_GCSE.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.rb_Private);
+            this.panel1.Controls.Add(this.rb_Public);
+            this.panel1.Location = new System.Drawing.Point(98, 122);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(180, 24);
+            this.panel1.TabIndex = 12;
             // 
             // rb_Private
             // 
@@ -212,8 +194,49 @@
             this.rb_Public.UseVisualStyleBackColor = true;
             this.rb_Public.CheckedChanged += new System.EventHandler(this.rb_Public_CheckedChanged);
             // 
+            // txt_Description
+            // 
+            this.txt_Description.Location = new System.Drawing.Point(98, 53);
+            this.txt_Description.Multiline = true;
+            this.txt_Description.Name = "txt_Description";
+            this.txt_Description.Size = new System.Drawing.Size(311, 63);
+            this.txt_Description.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(7, 53);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(82, 17);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Description";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 11F);
+            this.label3.Location = new System.Drawing.Point(13, 154);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 17);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Test level";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 11F);
+            this.label2.Location = new System.Drawing.Point(7, 122);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 17);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Test privacy";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lb_Filter);
+            this.groupBox2.Controls.Add(this.cb_Level);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.tabControl1);
             this.groupBox2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -293,24 +316,23 @@
             this.examDataSet1.Locale = new System.Globalization.CultureInfo("en-GB");
             this.examDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // panel1
+            // cb_Level
             // 
-            this.panel1.Controls.Add(this.rb_Private);
-            this.panel1.Controls.Add(this.rb_Public);
-            this.panel1.Location = new System.Drawing.Point(98, 122);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(180, 24);
-            this.panel1.TabIndex = 12;
+            this.cb_Level.FormattingEnabled = true;
+            this.cb_Level.Location = new System.Drawing.Point(121, 243);
+            this.cb_Level.Name = "cb_Level";
+            this.cb_Level.Size = new System.Drawing.Size(124, 22);
+            this.cb_Level.TabIndex = 7;
             // 
-            // panel2
+            // lb_Filter
             // 
-            this.panel2.Controls.Add(this.rb_AS);
-            this.panel2.Controls.Add(this.rb_A2);
-            this.panel2.Controls.Add(this.rb_GCSE);
-            this.panel2.Location = new System.Drawing.Point(98, 152);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(180, 23);
-            this.panel2.TabIndex = 13;
+            this.lb_Filter.AutoSize = true;
+            this.lb_Filter.Font = new System.Drawing.Font("Arial", 13F);
+            this.lb_Filter.Location = new System.Drawing.Point(12, 243);
+            this.lb_Filter.Name = "lb_Filter";
+            this.lb_Filter.Size = new System.Drawing.Size(103, 21);
+            this.lb_Filter.TabIndex = 8;
+            this.lb_Filter.Text = "Level Filter:";
             // 
             // CreateATest
             // 
@@ -325,17 +347,18 @@
             this.Load += new System.EventHandler(this.CreateATest_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tp_Public.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tp_Private.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.examDataSet1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -365,5 +388,7 @@
         private System.Windows.Forms.TextBox txt_Description;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lb_Filter;
+        private System.Windows.Forms.ComboBox cb_Level;
     }
 }

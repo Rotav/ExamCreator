@@ -123,7 +123,6 @@
             this.Controls.Add(this.txt_AnswerBox);
             this.Name = "Test";
             this.Text = "Test";
-            this.Load += new System.EventHandler(this.Test_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

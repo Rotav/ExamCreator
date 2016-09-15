@@ -35,7 +35,7 @@ namespace ExamCreator
 
         private void btn_ViewResults_Click(object sender, EventArgs e)
         {
-            ResultsDisplay resultsdisplay = new ResultsDisplay();
+            ResultsDisplay resultsdisplay = new ResultsDisplay(teacherID);
             resultsdisplay.Show();
         }
     }

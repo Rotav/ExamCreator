@@ -18,6 +18,7 @@ namespace ExamCreator
 
         private int testID = 0;
         private int studentTestID = 0;
+        private int studentID = 0;
 
         int questionPointer = 0;
 
@@ -26,15 +27,20 @@ namespace ExamCreator
         int maxIndex;
         string[] answers;
 
-        public Test(int TestID, int StudentTestID)
+        public Test(int TestID, int StudentTestID, int StudentID)
         {
             studentTestID = StudentTestID;
             testID = TestID;
-            MessageBox.Show(testID.ToString());
+            studentID = StudentID;
+
+            MessageBox.Show("studentTestID: " + studentTestID +"\nStudent ID: " + studentID);
+
             InitializeComponent();
 
             FindQuestions();
-            lb_QuestionNum.Text = "Question " + (questionPointer+1).ToString() + " of " + maxIndex.ToString();
+            OverWriteLabels();
+
+            lb_QuestionNum.Text = "Question " + (questionPointer + 1).ToString() + " of " + maxIndex.ToString();
         }
 
         private void FindQuestions()
@@ -63,10 +69,13 @@ namespace ExamCreator
                 i++;
                 
             }
-
-            lb_QuestionLabel.Text = questions[questionPointer];
         }
         
+        private void OverWriteLabels()
+        {
+            answers[questionPointer] = txt_AnswerBox.Text;
+            lb_QuestionLabel.Text = questions[questionPointer];
+        }
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -87,17 +96,21 @@ namespace ExamCreator
                 {
                     DataRow dr = ds.Tables[0].NewRow();
 
-                    dr[1] = studentTestID; //studentTest IDs
-                    dr[2] = questionIDs[i]; //questions
-                    dr[3] = answers[i]; //answers
+                    dr[1] = answers[i]; //answers
+                    dr[2] = studentID;//Student ID
+                    dr[3] = 0; //test is not marked
+                    dr[4] = testID; //test ID
+                    dr[5] = questionIDs[i]; //questions
+
+                    MessageBox.Show("Student ID: " + studentID);
 
                     ds.Tables[0].Rows.Add(dr);
                 }
                 objConnector.UpdateDatabase(ds);
+                
                 string query2 = "UPDATE tblStudentTest SET Completed = 1 WHERE Id = " + studentTestID;
 
-
-                MessageBox.Show("Test answers successfully sent!" + testID + studentTestID);
+                MessageBox.Show("Test answers successfully sent!");
                 this.Hide();
             }   
         }
@@ -106,14 +119,10 @@ namespace ExamCreator
         {
             if (questionPointer < maxIndex-1)
             {
-                answers[questionPointer] = txt_AnswerBox.Text;
-
+                OverWriteLabels();
                 questionPointer++;
-
-                lb_QuestionNum.Text = "Question " + (questionPointer+1).ToString() + " of " + maxIndex.ToString();
-                lb_QuestionLabel.Text = questions[questionPointer];
+                lb_QuestionNum.Text = "Question " + (questionPointer + 1).ToString() + " of " + maxIndex.ToString();
                 txt_AnswerBox.Text = answers[questionPointer];
-
             }
             else
             {
@@ -125,12 +134,9 @@ namespace ExamCreator
         {
             if(questionPointer > 0)
             {
-                answers[questionPointer] = txt_AnswerBox.Text;
-                
+                OverWriteLabels();
                 questionPointer--;
-
-                lb_QuestionLabel.Text = questions[questionPointer];
-                lb_QuestionNum.Text = "Question " + (questionPointer+1).ToString() + " of " + maxIndex.ToString();
+                lb_QuestionNum.Text = "Question " + (questionPointer + 1).ToString() + " of " + maxIndex.ToString();
                 txt_AnswerBox.Text = answers[questionPointer];
             }
             else

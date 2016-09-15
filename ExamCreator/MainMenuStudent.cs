@@ -76,7 +76,8 @@ namespace ExamCreator
                 if (ds.Tables[0].Rows.Count == 0)
                 {
                     Label label = new Label();
-                    label.Text = "There are no tests in this tab.";
+                    label.Text = "There are no tests at this level.";
+                    label.AutoSize = true;
 
                     flp.Controls.Add(label);//creates label
                 }
@@ -110,7 +111,7 @@ namespace ExamCreator
         private void OpenTest(Object sense, EventArgs e)
         {
             TestButton button = sense as TestButton;
-            Test test = new Test(button.TestId, button.StudentTestID); //opens test form, passes values 
+            Test test = new Test(button.TestId, button.StudentTestID, studentID); //opens test form, passes values 
             test.Show();
         }
 

@@ -82,6 +82,7 @@ namespace ExamCreator
                 {
                     int studentId;
                     Int32.TryParse(dr2["Id"].ToString(), out studentId);
+                    MessageBox.Show("studentID: " + studentId);
                     MainMenuStudent mainmenu = new MainMenuStudent(studentId);
                     mainmenu.Show();
                 }

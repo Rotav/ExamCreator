@@ -22,6 +22,12 @@ namespace ExamCreator
             get { return studentTestID; }
             set { studentTestID = value; }
         }
-        
+
+        private int studentID;
+        public int StudentID
+        {
+            get { return studentID; }
+            set { studentID = value; }
+        }
     }
 }

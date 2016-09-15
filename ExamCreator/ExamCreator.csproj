@@ -147,6 +147,12 @@
     <Compile Include="ResultsDisplay.Designer.cs">
       <DependentUpon>ResultsDisplay.cs</DependentUpon>
     </Compile>
+    <Compile Include="ResultStats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResultStats.Designer.cs">
+      <DependentUpon>ResultStats.cs</DependentUpon>
+    </Compile>
     <Compile Include="SendTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ResultsDisplay.resx">
       <DependentUpon>ResultsDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResultStats.resx">
+      <DependentUpon>ResultStats.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SendTest.resx">
       <DependentUpon>SendTest.cs</DependentUpon>
