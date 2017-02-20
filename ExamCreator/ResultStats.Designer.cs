@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ResultStats));
             this.btn_RightArrow = new System.Windows.Forms.Button();
             this.btn_LeftArrow = new System.Windows.Forms.Button();
             this.txt_Question = new System.Windows.Forms.TextBox();
@@ -81,6 +82,8 @@
             // 
             // txt_Question
             // 
+            this.txt_Question.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txt_Question.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Question.Location = new System.Drawing.Point(9, 43);
             this.txt_Question.Multiline = true;
             this.txt_Question.Name = "txt_Question";
@@ -90,6 +93,8 @@
             // 
             // txt_StudentAnswer
             // 
+            this.txt_StudentAnswer.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txt_StudentAnswer.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_StudentAnswer.Location = new System.Drawing.Point(9, 127);
             this.txt_StudentAnswer.Multiline = true;
             this.txt_StudentAnswer.Name = "txt_StudentAnswer";
@@ -146,6 +151,7 @@
             this.groupBox1.Controls.Add(this.btn_RightArrow);
             this.groupBox1.Controls.Add(this.txt_Question);
             this.groupBox1.Controls.Add(this.btn_LeftArrow);
+            this.groupBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(293, 278);
@@ -156,7 +162,7 @@
             // lb_QuestionNum
             // 
             this.lb_QuestionNum.AutoSize = true;
-            this.lb_QuestionNum.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_QuestionNum.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_QuestionNum.Location = new System.Drawing.Point(80, 241);
             this.lb_QuestionNum.Name = "lb_QuestionNum";
             this.lb_QuestionNum.Size = new System.Drawing.Size(107, 17);
@@ -168,6 +174,7 @@
             this.groupBox2.Controls.Add(this.lb_QuestionPercent);
             this.groupBox2.Controls.Add(this.lb_QuestionHigh);
             this.groupBox2.Controls.Add(this.lb_QuestionMarks);
+            this.groupBox2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(320, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(316, 111);
@@ -190,6 +197,7 @@
             this.groupBox3.Controls.Add(this.lb_TestPercent);
             this.groupBox3.Controls.Add(this.lb_TestHigh);
             this.groupBox3.Controls.Add(this.lb_TestMarks);
+            this.groupBox3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(316, 169);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(316, 121);
@@ -235,8 +243,9 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ResultStats";
-            this.Text = "ResultStats";
+            this.Text = "Result Statistics";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

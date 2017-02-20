@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Test));
             this.txt_AnswerBox = new System.Windows.Forms.TextBox();
             this.btn_LeftArrow = new System.Windows.Forms.Button();
             this.btn_RightArrow = new System.Windows.Forms.Button();
@@ -78,10 +79,10 @@
             // lb_QuestionNum
             // 
             this.lb_QuestionNum.AutoSize = true;
-            this.lb_QuestionNum.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_QuestionNum.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_QuestionNum.Location = new System.Drawing.Point(179, 222);
             this.lb_QuestionNum.Name = "lb_QuestionNum";
-            this.lb_QuestionNum.Size = new System.Drawing.Size(112, 18);
+            this.lb_QuestionNum.Size = new System.Drawing.Size(116, 19);
             this.lb_QuestionNum.TabIndex = 4;
             this.lb_QuestionNum.Text = "Question 1 of n";
             // 
@@ -103,11 +104,12 @@
             // 
             this.lb_QuestionLabel.AutoSize = true;
             this.lb_QuestionLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_QuestionLabel.Location = new System.Drawing.Point(179, 9);
+            this.lb_QuestionLabel.Location = new System.Drawing.Point(12, 9);
             this.lb_QuestionLabel.Name = "lb_QuestionLabel";
             this.lb_QuestionLabel.Size = new System.Drawing.Size(113, 18);
             this.lb_QuestionLabel.TabIndex = 6;
             this.lb_QuestionLabel.Text = "[Question here]";
+            this.lb_QuestionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Test
             // 
@@ -121,6 +123,7 @@
             this.Controls.Add(this.btn_RightArrow);
             this.Controls.Add(this.btn_LeftArrow);
             this.Controls.Add(this.txt_AnswerBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Test";
             this.Text = "Test";
             this.ResumeLayout(false);

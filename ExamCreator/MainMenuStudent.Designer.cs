@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenuStudent));
             this.label1 = new System.Windows.Forms.Label();
             this.tb_Menu = new System.Windows.Forms.TabControl();
             this.SuspendLayout();
@@ -58,6 +59,7 @@
             this.ClientSize = new System.Drawing.Size(383, 243);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_Menu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainMenuStudent";
             this.Text = "Main Menu";
             this.Load += new System.EventHandler(this.MainMenuStudent_Load);

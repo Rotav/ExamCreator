@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuestionCreator));
             this.btn_SubmitQuestion = new System.Windows.Forms.Button();
             this.txt_Question = new System.Windows.Forms.TextBox();
             this.txt_QuestionTitle = new System.Windows.Forms.TextBox();
@@ -40,26 +41,23 @@
             this.tbar_Difficulty = new System.Windows.Forms.TrackBar();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lb_Topics = new System.Windows.Forms.ListBox();
-            this.rb_Private = new System.Windows.Forms.RadioButton();
-            this.rb_Public = new System.Windows.Forms.RadioButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.num_Mark)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbar_Difficulty)).BeginInit();
             this.groupBox3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_SubmitQuestion
             // 
+            this.btn_SubmitQuestion.BackColor = System.Drawing.Color.White;
             this.btn_SubmitQuestion.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn_SubmitQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_SubmitQuestion.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_SubmitQuestion.Location = new System.Drawing.Point(190, 215);
+            this.btn_SubmitQuestion.Location = new System.Drawing.Point(180, 144);
             this.btn_SubmitQuestion.Name = "btn_SubmitQuestion";
             this.btn_SubmitQuestion.Size = new System.Drawing.Size(99, 23);
             this.btn_SubmitQuestion.TabIndex = 35;
             this.btn_SubmitQuestion.Text = "Submit question";
-            this.btn_SubmitQuestion.UseVisualStyleBackColor = true;
+            this.btn_SubmitQuestion.UseVisualStyleBackColor = false;
             this.btn_SubmitQuestion.Click += new System.EventHandler(this.btn_SubmitQuestion_Click);
             // 
             // txt_Question
@@ -139,7 +137,7 @@
             // 
             // tbar_Difficulty
             // 
-            this.tbar_Difficulty.BackColor = System.Drawing.Color.White;
+            this.tbar_Difficulty.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tbar_Difficulty.Location = new System.Drawing.Point(113, 93);
             this.tbar_Difficulty.Maximum = 5;
             this.tbar_Difficulty.Minimum = 1;
@@ -151,16 +149,17 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.lb_Topics);
-            this.groupBox3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(295, 9);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(267, 229);
+            this.groupBox3.Size = new System.Drawing.Size(267, 158);
             this.groupBox3.TabIndex = 41;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Topic";
             // 
             // lb_Topics
             // 
+            this.lb_Topics.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Topics.FormattingEnabled = true;
             this.lb_Topics.ItemHeight = 14;
             this.lb_Topics.Items.AddRange(new object[] {
@@ -168,74 +167,36 @@
             "Algorithims",
             "Binary",
             "Hardware",
-            "Software"});
+            "Software",
+            "Networks"});
             this.lb_Topics.Location = new System.Drawing.Point(7, 20);
             this.lb_Topics.Name = "lb_Topics";
-            this.lb_Topics.Size = new System.Drawing.Size(254, 186);
+            this.lb_Topics.Size = new System.Drawing.Size(254, 130);
             this.lb_Topics.TabIndex = 0;
-            // 
-            // rb_Private
-            // 
-            this.rb_Private.AutoSize = true;
-            this.rb_Private.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rb_Private.Location = new System.Drawing.Point(67, 30);
-            this.rb_Private.Name = "rb_Private";
-            this.rb_Private.Size = new System.Drawing.Size(58, 18);
-            this.rb_Private.TabIndex = 21;
-            this.rb_Private.Text = "Private";
-            this.rb_Private.UseVisualStyleBackColor = true;
-            // 
-            // rb_Public
-            // 
-            this.rb_Public.AutoSize = true;
-            this.rb_Public.Checked = true;
-            this.rb_Public.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rb_Public.Location = new System.Drawing.Point(7, 30);
-            this.rb_Public.Name = "rb_Public";
-            this.rb_Public.Size = new System.Drawing.Size(53, 18);
-            this.rb_Public.TabIndex = 19;
-            this.rb_Public.TabStop = true;
-            this.rb_Public.Text = "Public";
-            this.rb_Public.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.rb_Public);
-            this.groupBox1.Controls.Add(this.rb_Private);
-            this.groupBox1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(15, 144);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(274, 58);
-            this.groupBox1.TabIndex = 36;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Privacy";
             // 
             // QuestionCreator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(570, 250);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(570, 177);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.tbar_Difficulty);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.num_Mark);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_SubmitQuestion);
             this.Controls.Add(this.txt_Question);
             this.Controls.Add(this.txt_QuestionTitle);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "QuestionCreator";
             this.Text = "Question Creator";
             this.Load += new System.EventHandler(this.QuestionCreator_Load);
             ((System.ComponentModel.ISupportInitialize)(this.num_Mark)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbar_Difficulty)).EndInit();
             this.groupBox3.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,8 +216,5 @@
         private System.Windows.Forms.TrackBar tbar_Difficulty;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ListBox lb_Topics;
-        private System.Windows.Forms.RadioButton rb_Private;
-        private System.Windows.Forms.RadioButton rb_Public;
-        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MarkingForm));
             this.lb_QuestionNum = new System.Windows.Forms.Label();
             this.lb_Answer = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -73,22 +74,26 @@
             // 
             // num_Mark
             // 
+            this.num_Mark.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.num_Mark.Location = new System.Drawing.Point(107, 232);
             this.num_Mark.Name = "num_Mark";
-            this.num_Mark.Size = new System.Drawing.Size(162, 20);
+            this.num_Mark.Size = new System.Drawing.Size(162, 25);
             this.num_Mark.TabIndex = 3;
             // 
             // lb_HighMark
             // 
             this.lb_HighMark.AutoSize = true;
-            this.lb_HighMark.Location = new System.Drawing.Point(104, 255);
+            this.lb_HighMark.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.lb_HighMark.Location = new System.Drawing.Point(104, 260);
             this.lb_HighMark.Name = "lb_HighMark";
-            this.lb_HighMark.Size = new System.Drawing.Size(152, 13);
+            this.lb_HighMark.Size = new System.Drawing.Size(156, 14);
             this.lb_HighMark.TabIndex = 4;
             this.lb_HighMark.Text = "Highest mark for this question: ";
             // 
             // txt_StudentAnswer
             // 
+            this.txt_StudentAnswer.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txt_StudentAnswer.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_StudentAnswer.Location = new System.Drawing.Point(12, 127);
             this.txt_StudentAnswer.Multiline = true;
             this.txt_StudentAnswer.Name = "txt_StudentAnswer";
@@ -98,6 +103,8 @@
             // 
             // txt_Question
             // 
+            this.txt_Question.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txt_Question.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Question.Location = new System.Drawing.Point(15, 30);
             this.txt_Question.Multiline = true;
             this.txt_Question.Name = "txt_Question";
@@ -110,7 +117,7 @@
             this.btn_Submit.BackColor = System.Drawing.Color.White;
             this.btn_Submit.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn_Submit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_Submit.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Submit.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Submit.Location = new System.Drawing.Point(56, 317);
             this.btn_Submit.Name = "btn_Submit";
             this.btn_Submit.Size = new System.Drawing.Size(172, 24);
@@ -124,13 +131,12 @@
             this.btn_RightArrow.BackColor = System.Drawing.Color.White;
             this.btn_RightArrow.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn_RightArrow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_RightArrow.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_RightArrow.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_RightArrow.Location = new System.Drawing.Point(234, 311);
             this.btn_RightArrow.Name = "btn_RightArrow";
             this.btn_RightArrow.Size = new System.Drawing.Size(38, 34);
             this.btn_RightArrow.TabIndex = 8;
             this.btn_RightArrow.Text = "→";
-            this.btn_RightArrow.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btn_RightArrow.UseVisualStyleBackColor = false;
             this.btn_RightArrow.Click += new System.EventHandler(this.btn_RightArrow_Click);
             // 
@@ -139,13 +145,12 @@
             this.btn_LeftArrow.BackColor = System.Drawing.Color.White;
             this.btn_LeftArrow.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn_LeftArrow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_LeftArrow.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_LeftArrow.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_LeftArrow.Location = new System.Drawing.Point(12, 311);
             this.btn_LeftArrow.Name = "btn_LeftArrow";
             this.btn_LeftArrow.Size = new System.Drawing.Size(38, 34);
             this.btn_LeftArrow.TabIndex = 7;
             this.btn_LeftArrow.Text = "←";
-            this.btn_LeftArrow.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btn_LeftArrow.UseVisualStyleBackColor = false;
             this.btn_LeftArrow.Click += new System.EventHandler(this.btn_LeftArrow_Click);
             // 
@@ -153,6 +158,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(284, 357);
             this.Controls.Add(this.btn_Submit);
             this.Controls.Add(this.btn_RightArrow);
@@ -164,6 +170,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lb_Answer);
             this.Controls.Add(this.lb_QuestionNum);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MarkingForm";
             this.Text = "MarkingForm";
             ((System.ComponentModel.ISupportInitialize)(this.num_Mark)).EndInit();

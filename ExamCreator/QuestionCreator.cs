@@ -14,6 +14,7 @@ namespace ExamCreator
 {
     public partial class QuestionCreator : Form
     {
+        //Initialise variables
         DatabaseConnectioncs objConnector;
 
         DataSet ds;
@@ -29,12 +30,14 @@ namespace ExamCreator
         {
             try
             {
-                objConnector = new DatabaseConnectioncs();
+                objConnector = new DatabaseConnectioncs();//Creates a new object from the Database connection class.
+                
+                //Passes the database's file path directory into the database connection object. 
                 objConnector.connection_string = ExamCreator.Properties.Settings.Default.DBConn;
-                objConnector.Sql = "SELECT * FROM QuestionTable";
+                
+                objConnector.Sql = "SELECT * FROM QuestionTable";//Selects all values from the table QuestionTable and passes it into the database connection object.
 
-                ds = objConnector.GetConnection;
-                MessageBox.Show("QuestionTable Connection reached");
+                ds = objConnector.GetConnection;//Connects to the database using the objConnector class.
             }
             catch (Exception err)
             {
@@ -42,38 +45,26 @@ namespace ExamCreator
             }
         }
 
+        /// <summary>
+        /// Writes the inputted data for the question into the QuestionTable when the user clicks the submit button.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_SubmitQuestion_Click(object sender, EventArgs e)
         {
-            bool privacy = true;
-            int inc = 0;
-
-            if (rb_Public.Checked == true)
-            {
-                privacy = true;
-            }
-            else
-            {
-                privacy = false;
-            }
+            DataRow dr = ds.Tables[0].NewRow();//Creates a new row in the QuestionTable.
             
-            DataRow dr = ds.Tables[0].NewRow();
+            dr[1] = tbar_Difficulty.Value; //Writes the question's difficulty into the new row in QuestionTable.
+            dr[2] = txt_QuestionTitle.Text; //Writes the question's title into the new row in QuestionTable.
+            dr[3] = txt_Question.Text; //Writes the question's text into the new row in QuestionTable.
+            dr[4] = num_Mark.Value; //Writes the question's mark into the new row in QuestionTable.
+            dr[5] = lb_Topics.SelectedItem; //Writes the question's assigned topic into the new row in QuestionTable.
             
-            dr[1] = tbar_Difficulty.Value; //difficulty
-            dr[2] = txt_QuestionTitle.Text; //QTitle
-            dr[3] = privacy; //privacy
-            dr[5] = txt_Question.Text; //QText
-            dr[6] = num_Mark.Value;//mark
-            dr[7] = lb_Topics.SelectedItem;//topic
-            
-
-            ds.Tables[0].Rows.Add(dr);
+            ds.Tables[0].Rows.Add(dr); //Adds a new row to QuestionTable.
 
             try
             {
-                objConnector.UpdateDatabase(ds);
-                maxRows++;
-                inc = maxRows - 1;
-
+                objConnector.UpdateDatabase(ds);//Updates the database.
                 MessageBox.Show("Your question has been added!");
             }
             catch

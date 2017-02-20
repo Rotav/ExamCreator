@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenuTeacher));
             this.btn_CreateTest = new System.Windows.Forms.Button();
             this.btn_CreateQuestion = new System.Windows.Forms.Button();
             this.btn_ViewResults = new System.Windows.Forms.Button();
+            this.btn_CreateUser = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_CreateTest
@@ -75,15 +77,31 @@
             this.btn_ViewResults.UseVisualStyleBackColor = false;
             this.btn_ViewResults.Click += new System.EventHandler(this.btn_ViewResults_Click);
             // 
+            // btn_CreateUser
+            // 
+            this.btn_CreateUser.BackColor = System.Drawing.Color.White;
+            this.btn_CreateUser.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn_CreateUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_CreateUser.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CreateUser.Location = new System.Drawing.Point(12, 99);
+            this.btn_CreateUser.Name = "btn_CreateUser";
+            this.btn_CreateUser.Size = new System.Drawing.Size(201, 23);
+            this.btn_CreateUser.TabIndex = 4;
+            this.btn_CreateUser.Text = "Create new User";
+            this.btn_CreateUser.UseVisualStyleBackColor = false;
+            this.btn_CreateUser.Click += new System.EventHandler(this.btn_CreateUser_Click);
+            // 
             // MainMenuTeacher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(228, 103);
+            this.ClientSize = new System.Drawing.Size(228, 131);
+            this.Controls.Add(this.btn_CreateUser);
             this.Controls.Add(this.btn_ViewResults);
             this.Controls.Add(this.btn_CreateQuestion);
             this.Controls.Add(this.btn_CreateTest);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainMenuTeacher";
             this.Text = "Main Menu";
             this.ResumeLayout(false);
@@ -95,5 +113,6 @@
         private System.Windows.Forms.Button btn_CreateTest;
         private System.Windows.Forms.Button btn_CreateQuestion;
         private System.Windows.Forms.Button btn_ViewResults;
+        private System.Windows.Forms.Button btn_CreateUser;
     }
 }

@@ -11,7 +11,6 @@ namespace ExamCreator
 
         public DbContext(string p)
         {
-            // TODO: Complete member initialization
             this.p = p;
         }
     }
