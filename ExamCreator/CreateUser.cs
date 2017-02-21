@@ -57,11 +57,11 @@ namespace ExamCreator
 
                 if (rb_Student.Checked == true)//If the student radio button is checked...
                 {
-                    EncryptPassword("tblStudent", "student");
+                    EncryptPassword("tblStudent", "student"); //Calls the EncryptPassword subroutine centered around creating a new student user.
                 }
                 else if (rb_Teacher.Checked == true)//...Else if the student radio button is checked...
                 {
-                    EncryptPassword("tblTeacher", "teacher");
+                    EncryptPassword("tblTeacher", "teacher");//Calls the EncryptPassword subroutine centered around creating a new student user.
                 }
                 else
                 {
