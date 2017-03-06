@@ -78,6 +78,7 @@ namespace ExamCreator
         {
             txt_Forename.Text = string.Empty;
             txt_Surname.Text = string.Empty;
+            txt_Username.Text = string.Empty;
             txt_Password.Text = string.Empty;
             txt_ConfirmPassword.Text = string.Empty;
         }
@@ -111,27 +112,6 @@ namespace ExamCreator
                     MessageBox.Show("The " + accountType + " account for " + forename + " " + surname + " has been successfully created!");
                     ClearText();//Clears textbox text.
                 }
-            }
-        }
-
-        /// <summary>
-        /// Subroutine used to connect to the database and access the tblStudent table.
-        /// </summary>
-        private void LoadStudentTable()
-        {
-            try
-            {
-                objConnector = new DatabaseConnectioncs();//Create a new object from the database connection class.
-                stringConnector = Settings.Default.DBConn;//passes the database's file path directory into the stringConnector variable.
-                
-                objConnector.connection_string = stringConnector;//passes the file path into the database connection object. 
-                objConnector.Sql = "SELECT * FROM tblStudent";//selects all values from the table tblStudent and passes it into the database connection object.
-
-                ds = objConnector.GetConnection;//Connects to the database using the objConnector object.
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show("An error has occured: " + err.Message);
             }
         }
     }

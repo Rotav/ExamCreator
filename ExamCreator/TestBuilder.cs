@@ -80,7 +80,7 @@ namespace ExamCreator
 
         private void btn_Complete_Click(object sender, EventArgs e)
         {
-            if (lb_QuestionList.Items == null) //If there are no items in the listbox...
+            if (lb_QuestionList.Items.Count <= 0) //If there are no items in the listbox...
             {
                 MessageBox.Show("You must have at least one question in the test to complete it.");//...Send error message
             }
